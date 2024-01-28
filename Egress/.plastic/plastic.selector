@@ -1,4 +1,0 @@
-repository "Egress@zimikejiani@cloud"
-  path "/"
-    br "/main"
-    co "/main"
