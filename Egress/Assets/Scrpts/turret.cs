@@ -33,7 +33,9 @@ public class turret : MonoBehaviour
 
      Vector3 direction = targetPoint - origin;
         GameObject currentProj = Instantiate(projectile, origin, Quaternion.identity);
+     
         currentProj.GetComponent<Rigidbody>().AddForce(direction.normalized*shootForce, ForceMode.Impulse);
+       
      }
 
     }

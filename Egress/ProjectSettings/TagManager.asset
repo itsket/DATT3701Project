@@ -6,6 +6,8 @@ TagManager:
   tags:
   - platform
   - despawner
+  - limitless
+  - summoner
   layers:
   - Default
   - TransparentFX

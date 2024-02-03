@@ -11,21 +11,25 @@ public class PlayerMotor : MonoBehaviour
     private bool isGrounded;
     public float gravity = -9.8f;
     public float jumpHeight = 1f;
-
-
+    public TimeManager timeManager;
+    public bool inLimitless = false;
  
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+    
     }
 
     // Update is called once per frame
     void Update()
     {
         isGrounded= characterController.isGrounded;
-        if (isGrounded )
+        if (isGrounded && inLimitless)
         {
+            speed = 1f;
+        }
+        else if (isGrounded ) { 
             speed = 5f;
         }
         else
@@ -57,5 +61,40 @@ public class PlayerMotor : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other.gameObject.name + "triggered");
+        if (other.gameObject.tag == "platform" && timeManager.slowmo)
+        {
+            Debug.Log(other.gameObject.name + "triggered");
+            
+            transform.SetParent(other.transform);
+           other.GetComponent<Walkable>().onplat = true;
+            // Debug.Log("Entered " + other.name + " parent is " + other.transform.parent.name);
 
+
+        }
+
+        else if (other.gameObject.tag == "limitless")
+        {
+            Debug.Log("Limitless");
+            inLimitless = true;
+           
+        }
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "platform")
+        {
+            transform.parent = null;
+            Debug.Log("Left");
+            other.GetComponent<Walkable>().onplat = false;
+        }
+        else if (other.gameObject.tag == "limitless")
+        {
+            inLimitless = false;
+        }
+        }
 }

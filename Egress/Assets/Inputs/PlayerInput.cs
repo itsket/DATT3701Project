@@ -62,6 +62,24 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""zawordo"",
+                    ""type"": ""Button"",
+                    ""id"": ""ab346a4d-62b5-4e5d-aa44-4305dafc59f9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ResetTime"",
+                    ""type"": ""Button"",
+                    ""id"": ""40a59879-a716-478c-9310-686579c4563c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -240,6 +258,28 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""Starplat"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""93ed6354-2ec6-4e4b-b474-5059a9cef5c6"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""zawordo"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""035de9f5-674a-4719-944d-64244f490c8b"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ResetTime"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -252,6 +292,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_OnFoot_Jump = m_OnFoot.FindAction("Jump", throwIfNotFound: true);
         m_OnFoot_Look = m_OnFoot.FindAction("Look", throwIfNotFound: true);
         m_OnFoot_Starplat = m_OnFoot.FindAction("Starplat", throwIfNotFound: true);
+        m_OnFoot_zawordo = m_OnFoot.FindAction("zawordo", throwIfNotFound: true);
+        m_OnFoot_ResetTime = m_OnFoot.FindAction("ResetTime", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -317,6 +359,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_OnFoot_Jump;
     private readonly InputAction m_OnFoot_Look;
     private readonly InputAction m_OnFoot_Starplat;
+    private readonly InputAction m_OnFoot_zawordo;
+    private readonly InputAction m_OnFoot_ResetTime;
     public struct OnFootActions
     {
         private @PlayerInput m_Wrapper;
@@ -325,6 +369,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_OnFoot_Jump;
         public InputAction @Look => m_Wrapper.m_OnFoot_Look;
         public InputAction @Starplat => m_Wrapper.m_OnFoot_Starplat;
+        public InputAction @zawordo => m_Wrapper.m_OnFoot_zawordo;
+        public InputAction @ResetTime => m_Wrapper.m_OnFoot_ResetTime;
         public InputActionMap Get() { return m_Wrapper.m_OnFoot; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -346,6 +392,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Starplat.started += instance.OnStarplat;
             @Starplat.performed += instance.OnStarplat;
             @Starplat.canceled += instance.OnStarplat;
+            @zawordo.started += instance.OnZawordo;
+            @zawordo.performed += instance.OnZawordo;
+            @zawordo.canceled += instance.OnZawordo;
+            @ResetTime.started += instance.OnResetTime;
+            @ResetTime.performed += instance.OnResetTime;
+            @ResetTime.canceled += instance.OnResetTime;
         }
 
         private void UnregisterCallbacks(IOnFootActions instance)
@@ -362,6 +414,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Starplat.started -= instance.OnStarplat;
             @Starplat.performed -= instance.OnStarplat;
             @Starplat.canceled -= instance.OnStarplat;
+            @zawordo.started -= instance.OnZawordo;
+            @zawordo.performed -= instance.OnZawordo;
+            @zawordo.canceled -= instance.OnZawordo;
+            @ResetTime.started -= instance.OnResetTime;
+            @ResetTime.performed -= instance.OnResetTime;
+            @ResetTime.canceled -= instance.OnResetTime;
         }
 
         public void RemoveCallbacks(IOnFootActions instance)
@@ -385,5 +443,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnStarplat(InputAction.CallbackContext context);
+        void OnZawordo(InputAction.CallbackContext context);
+        void OnResetTime(InputAction.CallbackContext context);
     }
 }

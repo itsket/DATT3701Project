@@ -26,29 +26,55 @@ public class TimeManager : MonoBehaviour
 
             if (val <= 0)
             {
-                slowmo = false;
                 Time.timeScale = 1f;
+                Time.fixedDeltaTime = .02f;
                 val = reset;
+                slowmo = false;
             }
         }
     }
-    public void SlowMotion()
+    public void SlowMotion(int v)
     {
        
         if (!slowmo)
         {
-            Time.timeScale = slowdownFactor;
-            Time.fixedDeltaTime = Time.timeScale * .02f;
+            if (v == 0)
+            {
+                Time.timeScale = 0.00001f;
+                Time.fixedDeltaTime = .00001f * .02f;
+            }
+
+            else {
+                Time.timeScale = slowdownFactor;
+                Time.fixedDeltaTime = Time.timeScale * .02f;
+                val = 5;
+            }
+         
+               
+            
+           
+            
             slowmo = true;
             Debug.Log("SlowMotion");
         }
 
-        else
+        else if(v == 1)
         {
             Time.timeScale = 1f;
-            Time.fixedDeltaTime = Time.unscaledDeltaTime;
+            Time.fixedDeltaTime = .02f;
             val = reset;
             slowmo = false;
+
+         
+        }
+
+        else if (v == 0)
+        {
+
+            Time.timeScale = 0.00001f;
+            Time.fixedDeltaTime = .00001f * .02f;
+            val = 5;
+            slowmo = true;
         }
     }
 }

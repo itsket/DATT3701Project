@@ -9,12 +9,14 @@ public class Waypoints : MonoBehaviour {
     int current = 0;
     public float speed;
     float WPradius = 1;
+
     private Transform previousParent;
 
     public TimeManager timeManager;
 
 
-    void Update () {
+    void Update() {
+      
 		if(Vector3.Distance(waypoints[current].transform.position, transform.position) < WPradius)
         {
             current = Random.Range(0,waypoints.Length);
@@ -23,12 +25,13 @@ public class Waypoints : MonoBehaviour {
                 current = 0;
             }
         }
-        transform.position = Vector3.MoveTowards(transform.position, waypoints[current].transform.position, Time.deltaTime * speed);
+        float step = speed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, waypoints[current].transform.position, step);
       
     }
  
     private void OnTriggerEnter(Collider other) {
-      
+      if(gameObject.tag == "platform") {
         if (other.gameObject == player && timeManager.slowmo)
         {
             
@@ -37,6 +40,7 @@ public class Waypoints : MonoBehaviour {
             // Debug.Log("Entered " + other.name + " parent is " + other.transform.parent.name);
             
             Debug.Log(timeManager.slowmo);
+        }
         }
     }
 

@@ -9,7 +9,7 @@ public class Pickup : MonoBehaviour
     {
         bool istriggered= false;
         
-        if 
+    //    if 
     }
 
     // Update is called once per frame
