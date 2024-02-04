@@ -4,17 +4,44 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Attribute("Pickup Setting")]
+    [SerializeField] Transform holdArea;
+    private GameObject heldObj;
+    private Rigidbody heldObjRB;
+
+    [Attribute("Physics Parameters")]
+    [SerializeField] private float pickupRange =5.0f;
+    [SerializeField] private float pickupForce = 150.0f;
+
+    private void Update()
     {
-        bool istriggered= false;
-        
-    //    if 
+        if(Input.getmouseButtonDown(0))
+        {
+            if (heldObj == null)
+            {
+                RaycastHit hit;
+                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickupRange))
+                    {
+                    //Pickup obje4ct
+                }
+            }
+            else
+            { 
+                //Drop Object
+
+            }
+
+        }
+        if(heldObj != null)
+
+        {
+            //Move Object
+        }
+
+
+    }
+    void PickUpObject(GameObject pickObj) { 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
