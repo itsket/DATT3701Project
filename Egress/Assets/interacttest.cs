@@ -7,7 +7,7 @@ public class interacttest : MonoBehaviour, IInteractable
     // Start is called before the first frame update
     void Start()
     {
-        
+        GetComponent<Canvas>().enabled = false;
     }
     public void Interact() {
         Debug.Log("Interacted " + Random.Range(0,100));

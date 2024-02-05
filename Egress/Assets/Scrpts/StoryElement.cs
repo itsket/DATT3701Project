@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class StoryElement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Dialogue dialogue;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
