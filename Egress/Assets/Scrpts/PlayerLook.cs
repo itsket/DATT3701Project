@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerLook : MonoBehaviour
 {
-    public Camera camera;
+    public Camera camera1;
     private float xRotation = 0f;
     public float xSensitivity = 30f;
     public float ySensitivity = 30f;
@@ -19,7 +19,7 @@ public class PlayerLook : MonoBehaviour
            xRotation -=(mouseY * Time.unscaledDeltaTime)* ySensitivity;
         xRotation = Mathf.Clamp(xRotation,-80f, 80f);
         // apply to camera transform
-        camera.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+        camera1.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
         //rotate player to look left and right
         transform.Rotate(Vector3.up * (mouseX * Time.unscaledDeltaTime) * xSensitivity);
        
