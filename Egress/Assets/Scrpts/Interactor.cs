@@ -14,6 +14,7 @@ public class Interactor : MonoBehaviour
     public Material defaultMaterial;
     private GameObject currentObj;
     public GameObject textdisplay;
+    public GameObject player;
     void Start()
     {
       
@@ -29,29 +30,31 @@ public class Interactor : MonoBehaviour
             Ray r = new Ray(InteractorSource.position, InteractorSource.forward);
         if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange))
         {
-            defaultMaterial = hitInfo.collider.gameObject.GetComponent<MeshRenderer>().material;
+            //defaultMaterial = hitInfo.collider.gameObject.GetComponent<MeshRenderer>().material;
             if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
             {
                 currentObj = hitInfo.collider.gameObject;
 
-                currentObj.GetComponent<MeshRenderer>().material = material;
+               // currentObj.GetComponent<MeshRenderer>().material = material;
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     interactObj.Interact();
                     textdisplay.GetComponent<Canvas>().enabled = true;
+                    player.GetComponent<InputManager>().enabled = false;
+
                 }
 
             }
             else
             {
 
-                if (currentObj != hitInfo.collider.gameObject)
+               /* if (currentObj != hitInfo.collider.gameObject)
                 {
                     currentObj.GetComponent<MeshRenderer>().material = defaultMaterial;
                     currentObj = null;
                     defaultMaterial = null;
                 }
-
+               */
             }
         }
 

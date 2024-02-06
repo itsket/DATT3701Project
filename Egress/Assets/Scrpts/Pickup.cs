@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Pickup : MonoBehaviour
-{
+{/*
     [Attribute("Pickup Setting")]
     [SerializeField] Transform holdArea;
     private GameObject heldObj;
@@ -43,5 +43,5 @@ public class Pickup : MonoBehaviour
     void PickUpObject(GameObject pickObj) { 
     }
 
-
+*/
 }
