@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class PickupKey : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject Key;
+    public Transform Keyarea;
+
     void Start()
     {
-        
+        Key.GetComponent<Rigidbody>().isKinemtic = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
         
