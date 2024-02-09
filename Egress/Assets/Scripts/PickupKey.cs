@@ -9,7 +9,7 @@ public class PickupKey : MonoBehaviour
 
     void Start()
     {
-        Key.GetComponent<Rigidbody>().isKinemtic = true;
+        Key.GetComponent<Rigidbody>().isKinematic = true;
     }
 
     void Update()
