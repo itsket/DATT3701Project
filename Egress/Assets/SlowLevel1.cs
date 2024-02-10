@@ -10,6 +10,7 @@ public class slowLevel_1 : MonoBehaviour
     private Vector3 max;
     public bool killer = false;
     public bool summoner = false;
+    public GameObject respawnPoint;
     private void Awake()
     {
          rb = gameObject.GetComponent<Rigidbody>();
@@ -37,8 +38,8 @@ public class slowLevel_1 : MonoBehaviour
         }
 
         else if (other.gameObject.tag == "Player" && killer) {
-            other.gameObject.transform.position = new Vector3(-24.91f, 0f, 5.47f);
-            other.gameObject.transform.Rotate(0, 0, 0, Space.World);
+            other.gameObject.transform.position = respawnPoint.transform.position;
+            
         }
 
       

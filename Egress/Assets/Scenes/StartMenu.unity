@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 212f86608edb49f4bac9a212e85e5fcd, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44671893, g: 0.49657547, b: 0.5750153, a: 1}
+  m_IndirectSpecularColor: {r: 0.14236769, g: 0.17368415, b: 0.22677505, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -214,7 +214,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1841259060}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &784782200
@@ -986,13 +987,13 @@ MonoBehaviour:
       - m_Target: {fileID: 7331552152521450916, guid: f322b23fefcbe441681b37861d88bb7f, type: 3}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: Sceneloader
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Insomnia_PreAlpha
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1783270093
@@ -1128,7 +1129,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 932065894}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 30296227}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1332,7 +1333,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 1418500185}
   - {fileID: 30296227}
-  - {fileID: 1841259060}
   - {fileID: 861202819}
   - {fileID: 2884701182245223506}
   - {fileID: 1666178859}

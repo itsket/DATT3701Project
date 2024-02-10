@@ -8,6 +8,7 @@ TagManager:
   - despawner
   - limitless
   - summoner
+  - teleporter
   layers:
   - Default
   - TransparentFX

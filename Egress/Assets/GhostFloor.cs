@@ -6,8 +6,10 @@ using static UnityEngine.UI.Image;
 public class GhostFloor : MonoBehaviour
 {
 public GameObject floor;
+    public float disappearSpeed = 1f;
     private GameObject currentFloor = null;
-
+    public Vector3 scaleChange;
+  
     private void OnTriggerEnter(Collider other)
     {
 
@@ -21,7 +23,9 @@ public GameObject floor;
         if (currentFloor == null)
         {
             currentFloor = Instantiate(floor, origin, Quaternion.identity);
-            Destroy(currentFloor,4f);
+            currentFloor.transform.localScale += scaleChange;
+           
+            Destroy(currentFloor, disappearSpeed);
         }
        
     }
