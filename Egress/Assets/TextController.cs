@@ -18,6 +18,10 @@ public class TextController : MonoBehaviour
         sentences = new Queue<string>();
     }
     public void StartDialogue(Dialogue dialogue) {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        textScreen.GetComponent<Canvas>().enabled = true;
+        player.GetComponent<InputManager>().enabled = false;
         nameText = dialogue.name;
         sentences.Clear();
         foreach (string sentence in dialogue.sentences) { 
@@ -40,6 +44,7 @@ public class TextController : MonoBehaviour
             {
                 Debug.Log(nameText + " Behaviour");
             }
+          
             EndDialogue();
             return;
         }

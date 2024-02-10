@@ -39,8 +39,7 @@ public class Interactor : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     interactObj.Interact();
-                    textdisplay.GetComponent<Canvas>().enabled = true;
-                    player.GetComponent<InputManager>().enabled = false;
+                   
 
                 }
 
