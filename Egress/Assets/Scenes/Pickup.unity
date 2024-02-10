@@ -204,6 +204,7 @@ GameObject:
   - component: {fileID: 465190128}
   - component: {fileID: 465190130}
   - component: {fileID: 465190129}
+  - component: {fileID: 465190131}
   m_Layer: 5
   m_Name: StopTimeBarBG
   m_TagString: Untagged
@@ -269,6 +270,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 465190127}
   m_CullTransparentMesh: 1
+--- !u!114 &465190131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465190127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04ed54fef82ec364190f48922f98e1ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProgressBar: {fileID: 465190129}
+  Defaultspeed: 1
+  OnProgressChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCompleted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &629157962
 PrefabInstance:
   m_ObjectHideFlags: 0
