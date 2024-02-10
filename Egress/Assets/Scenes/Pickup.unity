@@ -258,7 +258,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1458022844}
+  m_Mesh: {fileID: 1737033710}
 --- !u!33 &76606723
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -3544,8 +3544,8 @@ Transform:
   m_GameObject: {fileID: 550775342}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.507, z: 0.928}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -2.24, y: -0.77, z: 3.1}
+  m_LocalScale: {x: -1.0418, y: -1.0418, z: -1.0418}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 347271055}
@@ -4305,6 +4305,7 @@ GameObject:
   - component: {fileID: 1084128158}
   - component: {fileID: 1084128157}
   - component: {fileID: 1084128156}
+  - component: {fileID: 1084128159}
   m_Layer: 0
   m_Name: Key
   m_TagString: Untagged
@@ -4443,10 +4444,24 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1084128159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084128151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d739bf59fc654681b9079d6e23c66d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Key: {fileID: 1084128151}
+  Keyarea: {fileID: 550775343}
 --- !u!1 &1095579001
 GameObject:
   m_ObjectHideFlags: 0
