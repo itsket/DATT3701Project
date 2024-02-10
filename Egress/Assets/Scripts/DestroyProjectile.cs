@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class DestroyProjectile : MonoBehaviour
 {
-
+    public float projectileLifeSpan = 2f;
     private void Start()
     {
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, projectileLifeSpan);
     }
 
   

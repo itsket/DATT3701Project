@@ -9,7 +9,7 @@ public class InputManager : MonoBehaviour
     public TimeManager timeManager;
     private PlayerMotor motor;
     private PlayerLook look;
-    
+
 
     // Start is called before the first frame update
     void Awake()
@@ -29,16 +29,12 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
         //tell the player motor to move using the value from our movement action
-        motor.ProcessMove(onFoot.Movement.ReadValue<Vector2>());
         look.ProcessLook(onFoot.Look.ReadValue<Vector2>());
+        motor.ProcessMove(onFoot.Movement.ReadValue<Vector2>());
 
-    }
-    private void LateUpdate()
-    {
-       
-    }
+        }
+ 
     private void OnEnable()
     {
         onFoot.Enable();

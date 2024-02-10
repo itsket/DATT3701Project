@@ -8,38 +8,84 @@ public class Waypoints : MonoBehaviour {
     public GameObject player;
     int current = 0;
     public float speed;
+    private float defspeed;
+    public bool destroyOnEnd = false;
     float WPradius = 1;
 
     private Transform previousParent;
+    public bool moveOnTrigger = false;
+    private bool playerOn = false;
 
-    public TimeManager timeManager;
-
+    void Start () {
+        defspeed = speed;
+    }
 
     void Update() {
-      
-		if(Vector3.Distance(waypoints[current].transform.position, transform.position) < WPradius)
+      if(moveOnTrigger)
         {
-            current = Random.Range(0,waypoints.Length);
+            if (playerOn) {
+                if (current >= waypoints.Length) {
+                  
+                }
+
+                else
+                {
+                    if (Vector3.Distance(waypoints[current].transform.position, transform.position) < 1)
+                    {
+                        current++;
+                        if (current >= waypoints.Length)
+                        {
+
+                            if (destroyOnEnd)
+                            {
+                                Destroy(gameObject);
+                            }
+                        }
+
+                    }
+                    if (current == 2)
+                    {
+                        speed = 1;
+                    }
+                    else {
+                        speed = defspeed;
+                    }
+                    float step = speed * Time.deltaTime;
+                    transform.position = Vector3.MoveTowards(transform.position, waypoints[current].transform.position, step);
+                }
+            }
+        }
+        else { 
+		if(Vector3.Distance(waypoints[current].transform.position, transform.position) < 1)
+        {
+            current++;
             if (current >= waypoints.Length)
             {
                 current = 0;
+                if (destroyOnEnd) {
+                    Destroy(gameObject);
+                }
             }
+        
         }
         float step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, waypoints[current].transform.position, step);
-      
+       transform.position = Vector3.MoveTowards(transform.position, waypoints[current].transform.position, step);
+      }
     }
  
     private void OnTriggerEnter(Collider other) {
-      if(gameObject.tag == "platform") {
-        if (other.gameObject == player && timeManager.slowmo)
+        Debug.Log("Entered " + other.name);
+        if (gameObject.tag == "platform") {
+        if (other.gameObject.tag == "Player")
         {
             
            player = other.gameObject;
             other.transform.SetParent(transform);
-            // Debug.Log("Entered " + other.name + " parent is " + other.transform.parent.name);
+                playerOn = true;
+
             
-            Debug.Log(timeManager.slowmo);
+            
+         
         }
         }
     }

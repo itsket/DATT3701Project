@@ -64,12 +64,12 @@ public class PlayerMotor : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.gameObject.name + "triggered");
-        if (other.gameObject.tag == "platform" && timeManager.slowmo)
+        if (other.gameObject.tag == "platform" )
         {
             Debug.Log(other.gameObject.name + "triggered");
             
             transform.SetParent(other.transform);
-           other.GetComponent<Walkable>().onplat = true;
+         //  other.GetComponent<Walkable>().onplat = true;
             // Debug.Log("Entered " + other.name + " parent is " + other.transform.parent.name);
 
 
@@ -80,6 +80,13 @@ public class PlayerMotor : MonoBehaviour
             Debug.Log("Limitless");
             inLimitless = true;
            
+        }
+
+        else if (other.gameObject.tag == "teleporter")
+        {
+            Debug.Log("teleporter");
+            
+
         }
 
     }

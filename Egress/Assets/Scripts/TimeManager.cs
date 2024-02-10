@@ -9,9 +9,16 @@ public class TimeManager : MonoBehaviour
     public int val = 5;
     public bool slowmo = false;
     public int reset = 10;
+    public float defaultTimeScale;
+    public float defaultDeltaTime;
     void Update()
     {
 
+    }
+    private void Start()
+    {
+        defaultTimeScale = Time.timeScale;
+        defaultDeltaTime = Time.deltaTime;
     }
     void LateUpdate()
     {
@@ -26,8 +33,8 @@ public class TimeManager : MonoBehaviour
 
             if (val <= 0)
             {
-                Time.timeScale = 1f;
-                Time.fixedDeltaTime = .02f;
+                Time.timeScale = defaultTimeScale;
+                Time.fixedDeltaTime = defaultDeltaTime;
                 val = reset;
                 slowmo = false;
             }
@@ -55,8 +62,9 @@ public class TimeManager : MonoBehaviour
            
             
             slowmo = true;
-            Debug.Log("SlowMotion");
+           
         }
+        
 
         else if(v == 1)
         {
@@ -76,5 +84,6 @@ public class TimeManager : MonoBehaviour
             val = 5;
             slowmo = true;
         }
+        Debug.Log("SlowMotion");
     }
 }
