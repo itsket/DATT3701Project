@@ -7,7 +7,7 @@ public class ForceFieldBehaviour : MonoBehaviour
     public bool beam1Down;
     public bool beam2Down;
 
-    void TurnOff() {
+    public void TurnOff() {
         if (beam1Down && beam2Down)
         {
             gameObject.SetActive(false);

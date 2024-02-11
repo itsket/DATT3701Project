@@ -15,6 +15,8 @@ public class keyplacement : MonoBehaviour
     private Quaternion previousRotation;
     public bool unlocked1 = false;
     public bool unlocked2 = false;
+    public bool isExit = false;
+    public GameObject exitDoor;
     public void KeyEntered(GameObject key1)
     {
         /*
@@ -77,10 +79,14 @@ public class keyplacement : MonoBehaviour
                     beam.GetComponent<TurnOffForceField>().unlocked2 = true;
                     beam.GetComponent<TurnOffForceField>().DestroyBeam();
                 }
+                else if (isExit) {
+                    exitDoor.GetComponent<OpenDoor>.openDoor();
+                }
                 
                 Debug.Log("correctKey key1");
                 currentkey.transform.position = gameObject.transform.position;
             }
+
             else
             {
                 currentkey.transform.position = gameObject.transform.position;
