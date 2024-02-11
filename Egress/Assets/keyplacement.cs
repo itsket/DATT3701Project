@@ -71,6 +71,13 @@ public class keyplacement : MonoBehaviour
                     beam.GetComponent<TurnOffForceField>().unlocked2 = true;
                     beam.GetComponent<TurnOffForceField>().DestroyBeam();
                 }
+                if (unlocked2 && unlocked1)
+                {
+                    beam.GetComponent<TurnOffForceField>().unlocked1 = true;
+                    beam.GetComponent<TurnOffForceField>().unlocked2 = true;
+                    beam.GetComponent<TurnOffForceField>().DestroyBeam();
+                }
+                
                 Debug.Log("correctKey key1");
                 currentkey.transform.position = gameObject.transform.position;
             }

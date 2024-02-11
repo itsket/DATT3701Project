@@ -36,7 +36,7 @@ public class Interacttest : MonoBehaviour, IInteractable
         else if (gameObject.GetComponent<StoryElement>().dialogue.name.Contains("Key_2_placer"))
         {
 
-            if (keybone.transform.childCount > 0)
+            if (keybone.transform.childCount > 0 && keybone.transform.GetChild(0).gameObject.GetComponent<StoryElement>().dialogue.name == keyplacement.GetComponent<keyplacement>().correctKey)
             {
                 keyplacement.GetComponent<keyplacement>().KeyEntered(keybone.transform.GetChild(0).gameObject);
                 keybone.transform.DetachChildren();
