@@ -7,6 +7,7 @@ public class Interacttest : MonoBehaviour, IInteractable
     // Start is called before the first frame update
     public bool hasDialogue = true;
     public GameObject keyplacement;
+    public GameObject keybone;
 
     void Start()
     {
@@ -32,13 +33,22 @@ public class Interacttest : MonoBehaviour, IInteractable
             if (gameObject.GetComponent<StoryElement>().dialogue.name.Contains("Key_1")) {
                 keyplacement.GetComponent<keyplacement>().KeyEntered(gameObject);
             }
+        else if (gameObject.GetComponent<StoryElement>().dialogue.name.Contains("Key_2_placer"))
+        {
 
-            else if (gameObject.GetComponent<StoryElement>().dialogue.name.Contains("Key_2"))
+            if (keybone.transform.childCount > 0)
+            {
+                keyplacement.GetComponent<keyplacement>().KeyEntered(keybone.transform.GetChild(0).gameObject);
+                keybone.transform.DetachChildren();
+            }
+        }
+        else if (gameObject.GetComponent<StoryElement>().dialogue.name.Contains("Key_2"))
             {
 
                 gameObject.GetComponent<PickupKey>().Pickup();
             }
-        
+      
+
     }
     // Update is called once per frame
     void Update()

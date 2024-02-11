@@ -80,8 +80,8 @@ public class InputManager : MonoBehaviour
         motor.ProcessMove(onFoot.Movement.ReadValue<Vector2>());
         look.ProcessLook(onFoot.Look.ReadValue<Vector2>());
 
-        Debug.Log("Stoptime passed:" + StoptimeCurrentCd);
-        Debug.Log("SlowTime passed:" + SlowtimeCurrentCd);
+       // Debug.Log("Stoptime passed:" + StoptimeCurrentCd);
+      //  Debug.Log("SlowTime passed:" + SlowtimeCurrentCd);
 
         //move slider
         StopTimeSlider.value = StoptimeCurrentCd;

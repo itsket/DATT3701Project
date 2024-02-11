@@ -10,6 +10,11 @@ public class keyplacement : MonoBehaviour
     private GameObject currentkey;
     public string correctKey;
     private Vector3 previousPosition;
+    public GameObject beam;
+    private Vector3 previousSize;
+    private Quaternion previousRotation;
+    public bool unlocked1 = false;
+    public bool unlocked2 = false;
     public void KeyEntered(GameObject key1)
     {
         /*
@@ -17,28 +22,55 @@ public class keyplacement : MonoBehaviour
         when terminal has a key it moves its current ckey back and
          
          */
-
-        if (currentkey != null && currentkey.GetComponent<StoryElement>().dialogue.name != correctKey)
+       
+        if (currentkey != null)
         {
             currentkey.transform.position = previousPosition;
+            currentkey.transform.localScale = previousSize;
+            currentkey.transform.rotation = previousRotation;
             previousPosition = key1.transform.position;
 
 
             currentkey = key1;
             currentkey.transform.position = gameObject.transform.position;
+            currentkey.transform.localScale = previousSize * 2;
+            currentkey.transform.rotation = gameObject.transform.rotation;
             if (currentkey.GetComponent<StoryElement>().dialogue.name == correctKey)
             {
                 Debug.Log("correctKey key1");
 
+                if (unlocked1)
+                {
+                    beam.GetComponent<TurnOffForceField>().unlocked1 = true;
+                    beam.GetComponent<TurnOffForceField>().DestroyBeam();
+                }
+                if (unlocked2)
+                {
+                    beam.GetComponent<TurnOffForceField>().unlocked2 = true;
+                    beam.GetComponent<TurnOffForceField>().DestroyBeam();
+                }
             }
         }
         else if (currentkey == null)
         {
             previousPosition = key1.transform.position;
+            previousSize = key1.transform.localScale;
+            previousRotation = key1.transform.rotation;
             currentkey = key1;
-
+            currentkey.transform.localScale = previousSize * 2;
+            currentkey.transform.rotation = gameObject.transform.rotation;
             if (currentkey.GetComponent<StoryElement>().dialogue.name == correctKey)
             {
+                if (unlocked1)
+                {
+                    beam.GetComponent<TurnOffForceField>().unlocked1 = true;
+                    beam.GetComponent<TurnOffForceField>().DestroyBeam();
+                }
+                if (unlocked2)
+                {
+                    beam.GetComponent<TurnOffForceField>().unlocked2 = true;
+                    beam.GetComponent<TurnOffForceField>().DestroyBeam();
+                }
                 Debug.Log("correctKey key1");
                 currentkey.transform.position = gameObject.transform.position;
             }
@@ -47,8 +79,6 @@ public class keyplacement : MonoBehaviour
                 currentkey.transform.position = gameObject.transform.position;
             }
         }
-        else {
-            Debug.Log("correctKey key1");
-        }
+        
     }
 }
