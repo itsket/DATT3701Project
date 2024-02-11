@@ -11,31 +11,36 @@ public class TimeManager : MonoBehaviour
     public int reset = 10;
 
     //public float StopTimeCurrentCD = 0.0f;
-    public Slider StopTimeSlider;
-    public float StopTimeCooldown = 10f;
+    // These are for the duration of the time effects if we want it change the names later
+    public Slider StopTimeDurationSlider;
+    public float StopTimeDuration = 10f;
     public bool StopTimeOn = false;
     public int incval = 0;
     public int stopincval = 0;
 
-    public Slider SlowTimeSlider;
+    //these two numbers are for the inputmanager to have their own values
+    public int slowCDval = 0;
+    public int stopCDval = 0;
+
+
+    public Slider SlowTimeDurationSlider;
     public float SlowTimeDuration = 5f;
 
     private void Start()
     {
-        StopTimeSlider.minValue = 0;
-        StopTimeSlider.maxValue = 1;
-        SlowTimeSlider.minValue = 0;
-        SlowTimeSlider.maxValue = 1;
-        
+        StopTimeDurationSlider.minValue = 0;
+        StopTimeDurationSlider.maxValue = 1;
+        SlowTimeDurationSlider.minValue = 0;
+        SlowTimeDurationSlider.maxValue = 1;
+
 
     }
 
     void Update()
     {
 
-        StopTimeSlider.value = stopincval / StopTimeCooldown;
-        SlowTimeSlider.value = incval / SlowTimeDuration;
-
+        StopTimeDurationSlider.value = stopincval / StopTimeDuration;
+        SlowTimeDurationSlider.value = incval / SlowTimeDuration;
 
 
     }
@@ -46,17 +51,30 @@ public class TimeManager : MonoBehaviour
         if (TimeInterval >= 1)
         {
             TimeInterval = 0;
-            Debug.Log("Time Remaining: " + val);
+            //Debug.Log("Time Remaining: " + val);
             if (slowmo)
             {
+                SlowTimeDurationSlider.gameObject.SetActive(true);
                 val--;
                 incval++;
-            }
-            if (StopTimeOn)
-            {
-                stopincval++;
+                slowCDval++;
             }
 
+            if (StopTimeOn)
+            {
+                StopTimeDurationSlider.gameObject.SetActive(true);
+                stopincval++;
+                stopCDval++;
+            }
+
+            if (stopCDval >= 10)
+            {
+                stopCDval = 0;
+            }
+            else if (slowCDval >= 8)
+            {
+                slowCDval = 0;
+            }
 
             if (val <= 0)
             {
@@ -67,9 +85,12 @@ public class TimeManager : MonoBehaviour
                 StopTimeOn = false;
                 incval = 0;
                 stopincval = 0;
-
+                StopTimeDurationSlider.gameObject.SetActive(false);
+                SlowTimeDurationSlider.gameObject.SetActive(false);
 
             }
+
+
         }
     }
     public void SlowMotion(int v)
@@ -123,7 +144,7 @@ public class TimeManager : MonoBehaviour
             Time.timeScale = 0.00001f;
             Time.fixedDeltaTime = .00001f * .02f;
             val = 5;
-            slowmo = true;
+            slowmo = true;//comment slowmo out later 
             StopTimeOn = true;
 
 
