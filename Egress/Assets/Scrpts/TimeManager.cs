@@ -25,6 +25,7 @@ public class TimeManager : MonoBehaviour
 
 
     public Slider SlowTimeDurationSlider;
+    public Canvas slider;
     public float SlowTimeDuration = 10;
 
     private void Start()
@@ -98,6 +99,7 @@ public class TimeManager : MonoBehaviour
     {
         if (canSlowDownTime)
         {
+            slider.GetComponent<Canvas>().enabled = true;
             if (!slowmo)
             {
                 if (v == 0)

@@ -11,7 +11,7 @@ public class StoryElement : MonoBehaviour
     public GameObject canvas;
     public GameObject player;
     public bool alreadyEntered = false;
-
+   
     public void TriggerDialogue()
     {
         if (!onTriggerInteract) { 
@@ -41,7 +41,8 @@ public class StoryElement : MonoBehaviour
 
             if (dialogue.name == "BulletTimeDevice") {
                 player.GetComponent<PlayerMotor>().timeManager.canSlowDownTime = true;
-            }
+               
+}
 
         }
 

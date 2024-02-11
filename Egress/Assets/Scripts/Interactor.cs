@@ -50,7 +50,8 @@ public class Interactor : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     interactObj.Interact();
-                   
+                    if (currentObj.GetComponent<PickupKey>())
+                        currentObj.GetComponent<PickupKey>().Pickup();
 
                 }
 

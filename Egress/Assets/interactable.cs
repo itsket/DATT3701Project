@@ -17,7 +17,7 @@ public class Interacttest : MonoBehaviour, IInteractable
     void Awake()
     {
         gameObject.AddComponent<Outline>();
-        gameObject.GetComponent<Outline>().OutlineMode = Outline.Mode.OutlineAll;
+        gameObject.GetComponent<Outline>().OutlineMode = Outline.Mode.OutlineVisible;
         gameObject.GetComponent<Outline>().OutlineColor = Color.yellow;
         gameObject.GetComponent<Outline>().OutlineWidth = 6f;
     }
