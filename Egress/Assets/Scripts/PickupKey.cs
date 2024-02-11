@@ -18,14 +18,14 @@ public class PickupKey : MonoBehaviour
         Drop();
       }
     }
-    void Drop()
+    public void Drop()
     {
         Keyarea.DetachChildren();
         Key.transform.eulerAngles = new Vector3(Key.transform.position.x, Key.transform.position.z, Key.transform.position.y);
         Key.GetComponent<Rigidbody>().isKinematic = false;
         Key.GetComponent<MeshCollider>().enabled = true;
     }
-    void Pickup()
+   public void Pickup()
     {
         Key.GetComponent<Rigidbody>().isKinematic = true;
         Key.transform.position = Keyarea.transform.position;

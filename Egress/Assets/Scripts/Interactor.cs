@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.HID;
 
 interface IInteractable
 {
@@ -22,6 +23,11 @@ public class Interactor : MonoBehaviour
         textdisplay.GetComponent<Canvas>().enabled = false;
 
     }
+    private void Awake()
+    {
+       
+      
+    }
 
     // Update is called once per frame
     void Update()
@@ -30,12 +36,17 @@ public class Interactor : MonoBehaviour
             Ray r = new Ray(InteractorSource.position, InteractorSource.forward);
         if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange))
         {
+            if (currentObj != null && hitInfo.collider.gameObject != currentObj)
+                currentObj.transform.SendMessage("NotHitByRay");
             //defaultMaterial = hitInfo.collider.gameObject.GetComponent<MeshRenderer>().material;
             if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
             {
-                currentObj = hitInfo.collider.gameObject;
+             if (currentObj !=null && hitInfo.collider.gameObject != currentObj)
+                    currentObj.transform.SendMessage("NotHitByRay");
 
-               // currentObj.GetComponent<MeshRenderer>().material = material;
+                currentObj = hitInfo.collider.gameObject;
+                currentObj.transform.SendMessage("HitByRay");
+                // currentObj.GetComponent<MeshRenderer>().material = material;
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     interactObj.Interact();
@@ -46,14 +57,15 @@ public class Interactor : MonoBehaviour
             }
             else
             {
+               
 
-               /* if (currentObj != hitInfo.collider.gameObject)
-                {
-                    currentObj.GetComponent<MeshRenderer>().material = defaultMaterial;
-                    currentObj = null;
-                    defaultMaterial = null;
-                }
-               */
+                /* if (currentObj != hitInfo.collider.gameObject)
+                 {
+                     currentObj.GetComponent<MeshRenderer>().material = defaultMaterial;
+                     currentObj = null;
+                     defaultMaterial = null;
+                 }
+                */
             }
         }
 

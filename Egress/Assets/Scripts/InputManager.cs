@@ -19,9 +19,9 @@ public class InputManager : MonoBehaviour
         motor = GetComponent<PlayerMotor>();
       
         onFoot.Jump.performed += ctx => motor.Jump();
-        onFoot.Starplat.performed += ctx => timeManager.SlowMotion(99);
+        onFoot.Starplat.performed += ctx => timeManager.SlowMotion(1);
         onFoot.zawordo.performed += ctx => timeManager.SlowMotion(0);
-        onFoot.ResetTime.performed += ctx => timeManager.SlowMotion(1);
+        onFoot.ResetTime.performed += ctx => timeManager.SlowMotion(99);
         //onFoot.Jump.performed += ctx => motor.Jump();
         look = GetComponent<PlayerLook>();
     }

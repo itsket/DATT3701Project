@@ -12,14 +12,18 @@ public class StoryElement : MonoBehaviour
     public GameObject player;
     public bool alreadyEntered = false;
 
-    public void TriggerDialogue() {
+    public void TriggerDialogue()
+    {
+        if (!onTriggerInteract) { 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         dialogueManager.GetComponent<TextController>().StartDialogue(dialogue);
     }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
+      
         TriggerDialogueOnEnter();
        
     }
@@ -34,6 +38,10 @@ public class StoryElement : MonoBehaviour
             player.GetComponent<InputManager>().enabled = false;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+
+            if (dialogue.name == "BulletTimeDevice") {
+                player.GetComponent<PlayerMotor>().timeManager.canSlowDownTime = true;
+            }
 
         }
 

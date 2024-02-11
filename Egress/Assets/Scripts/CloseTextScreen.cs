@@ -9,5 +9,7 @@ public class CloseTextScreen : MonoBehaviour
     public void closeButton() {
         textScreen.GetComponent<Canvas>().enabled = false;
         player.GetComponent<InputManager>().enabled = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }
