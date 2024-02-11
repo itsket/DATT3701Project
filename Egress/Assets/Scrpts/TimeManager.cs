@@ -6,9 +6,10 @@ public class TimeManager : MonoBehaviour
     public float slowdownFactor = 0.03f;
     public float slowdownLength = 2f;
     float TimeInterval;
-    public int val = 5;
+    public int val;
     public bool slowmo = false;
     public int reset = 10;
+    public bool canSlowDownTime = false;
 
     //public float StopTimeCurrentCD = 0.0f;
     // These are for the duration of the time effects if we want it change the names later
@@ -24,7 +25,7 @@ public class TimeManager : MonoBehaviour
 
 
     public Slider SlowTimeDurationSlider;
-    public float SlowTimeDuration = 5f;
+    public float SlowTimeDuration = 10;
 
     private void Start()
     {
@@ -54,7 +55,7 @@ public class TimeManager : MonoBehaviour
             //Debug.Log("Time Remaining: " + val);
             if (slowmo)
             {
-                SlowTimeDurationSlider.gameObject.SetActive(true);
+               // SlowTimeDurationSlider.gameObject.SetActive(true);
                 val--;
                 incval++;
                 slowCDval++;
@@ -62,7 +63,7 @@ public class TimeManager : MonoBehaviour
 
             if (StopTimeOn)
             {
-                StopTimeDurationSlider.gameObject.SetActive(true);
+               // StopTimeDurationSlider.gameObject.SetActive(true);
                 stopincval++;
                 stopCDval++;
             }
@@ -95,60 +96,68 @@ public class TimeManager : MonoBehaviour
     }
     public void SlowMotion(int v)
     {
-       
-        if (!slowmo)
+        if (canSlowDownTime)
         {
-            if (v == 0)
+            if (!slowmo)
             {
-                Time.timeScale = 0.00001f;
-                Time.fixedDeltaTime = .00001f * .02f;
-                StopTimeOn = true;
+                if (v == 0)
+                {
+                    Time.timeScale = 0.00001f;
+                    Time.fixedDeltaTime = .00001f * .02f;
+                    StopTimeOn = true;
+
+                    slowmo = true;
+                }
+
+                else if (v==1)
+                {
+                    Time.timeScale = slowdownFactor;
+                    Time.fixedDeltaTime = Time.timeScale * .02f;
+
+                    val = reset;
+                    slowmo = true;
 
 
+
+                }
 
             }
 
-            else {
-                Time.timeScale = slowdownFactor;
-                Time.fixedDeltaTime = Time.timeScale * .02f;
-                val = 5;
+            else
+            {
+                if (v == 0)//time is stopped
+                {
+
+                    Time.timeScale = 0.00001f;
+                    Time.fixedDeltaTime = .00001f * .02f;
+                    val = reset;
+                    slowmo = true;//comment slowmo out later 
+                    StopTimeOn = true;
 
 
-           
 
+                }
+                else if (v == 1)
+                {
+                    Time.timeScale = slowdownFactor;
+                    Time.fixedDeltaTime = Time.timeScale * .02f;
+
+                    val = reset;
+                    slowmo = true;
+
+
+
+                }
+                else if (v == 99)
+                {
+                    Time.timeScale = 1f;
+                    Time.fixedDeltaTime = .02f;
+                    val = reset;
+                    slowmo = false;
+                    StopTimeOn = false;
+                }
             }
-         
-               
-            
            
-            
-            slowmo = true;
-            Debug.Log("SlowMotion");
-        }
-
-        else if(v == 1)
-        {
-            Time.timeScale = 1f;
-            Time.fixedDeltaTime = .02f;
-            val = reset;
-            slowmo = false;
-            StopTimeOn=false;
-            incval = 0;
-            stopincval = 0;
-
-        }
-
-        else if (v == 0)//time is stopped
-        {
-
-            Time.timeScale = 0.00001f;
-            Time.fixedDeltaTime = .00001f * .02f;
-            val = 5;
-            slowmo = true;//comment slowmo out later 
-            StopTimeOn = true;
-
-
-
         }
     }
 }

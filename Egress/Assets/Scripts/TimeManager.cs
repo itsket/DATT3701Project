@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class TimeManager : MonoBehaviour
+public class TimeManager1 : MonoBehaviour
 {
     public float slowdownFactor = 0.03f;
     public float slowdownLength = 2f;
@@ -12,6 +12,7 @@ public class TimeManager : MonoBehaviour
     public int reset = 10;
     public float defaultTimeScale;
     public float defaultDeltaTime;
+   
     void Update()
     {
 

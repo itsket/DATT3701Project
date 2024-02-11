@@ -53,7 +53,7 @@ public class InputManager : MonoBehaviour
             //timeManager.SlowMotion(0);
             StoptimePressed = true;
         };
-        onFoot.ResetTime.performed += ctx => timeManager.SlowMotion(1);
+        onFoot.ResetTime.performed += ctx => timeManager.SlowMotion(99);
 
 
         //onFoot.Jump.performed += ctx => motor.Jump();
@@ -106,7 +106,7 @@ public class InputManager : MonoBehaviour
         if (SlowtimePressed && SlowtimeCurrentCd <= 0)
         {
             slowCDval = 0;
-            timeManager.SlowMotion(99);
+            timeManager.SlowMotion(1);
             SlowTimeSlider.value = 1;
             SlowtimeCurrentCd = SlowtimeCooldown;
 
