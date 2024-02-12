@@ -80,7 +80,8 @@ public class keyplacement : MonoBehaviour
                     beam.GetComponent<TurnOffForceField>().DestroyBeam();
                 }
                 else if (isExit) {
-                    exitDoor.GetComponent<OpenDoor>.openDoor();
+                    exitDoor.GetComponent<OpenDoor>().isUnlocked = true;
+                    currentkey.transform.parent = gameObject.transform;
                 }
                 
                 Debug.Log("correctKey key1");

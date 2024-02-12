@@ -12,7 +12,7 @@ public class Waypoints : MonoBehaviour {
     public bool destroyOnEnd = false;
     float WPradius = 1;
 
-    private Transform previousParent;
+    private Vector3 previousScale;
     public bool moveOnTrigger = false;
     private bool playerOn = false;
 
@@ -78,9 +78,9 @@ public class Waypoints : MonoBehaviour {
         if (gameObject.tag == "platform") {
         if (other.gameObject.tag == "Player")
         {
-            
-           player = other.gameObject;
-            other.transform.SetParent(transform);
+                previousScale = player.transform.lossyScale;
+               player = other.gameObject;
+            other.transform.SetParent(transform, true);
                 playerOn = true;
 
             
@@ -96,6 +96,7 @@ public class Waypoints : MonoBehaviour {
         {
             other.transform.parent = null;
             Debug.Log("Left");
+            player.transform.localScale = previousScale;
         }
     }
     /*void OnTriggerEnter(Collider n)

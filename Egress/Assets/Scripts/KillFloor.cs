@@ -14,6 +14,7 @@ public class KillFloor : MonoBehaviour
         else {
             other.gameObject.transform.position = respawnPoint.transform.position;
             other.gameObject.transform.rotation = respawnPoint.transform.rotation;
+
         }
     }
 }

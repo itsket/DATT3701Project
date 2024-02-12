@@ -33,7 +33,7 @@ public class Interacttest : MonoBehaviour, IInteractable
             if (gameObject.GetComponent<StoryElement>().dialogue.name.Contains("Key_1")) {
                 keyplacement.GetComponent<keyplacement>().KeyEntered(gameObject);
             }
-        else if (gameObject.GetComponent<StoryElement>().dialogue.name.Contains("Key_2_placer"))
+        else if (gameObject.GetComponent<StoryElement>().dialogue.name.Contains("Key_2_placer") || gameObject.GetComponent<StoryElement>().dialogue.name.Contains("Key_3_placer"))
         {
 
             if (keybone.transform.childCount > 0 && keybone.transform.GetChild(0).gameObject.GetComponent<StoryElement>().dialogue.name == keyplacement.GetComponent<keyplacement>().correctKey)

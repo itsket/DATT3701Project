@@ -41,7 +41,7 @@ public class StoryElement : MonoBehaviour
 
             if (dialogue.name == "BulletTimeDevice") {
                 player.GetComponent<PlayerMotor>().timeManager.canSlowDownTime = true;
-               
+               gameObject.SetActive(false);
 }
 
         }
