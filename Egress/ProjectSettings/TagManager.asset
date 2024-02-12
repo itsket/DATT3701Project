@@ -9,6 +9,7 @@ TagManager:
   - limitless
   - summoner
   - teleporter
+  - key
   layers:
   - Default
   - TransparentFX
