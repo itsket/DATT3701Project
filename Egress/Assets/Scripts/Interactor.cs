@@ -9,56 +9,59 @@ interface IInteractable
 }
 public class Interactor : MonoBehaviour
 {
-    public Transform InteractorSource;
+    
     public float InteractRange;
     public Material material;
     public Material defaultMaterial;
     private GameObject currentObj;
     public GameObject textdisplay;
     public GameObject player;
+    IInteractable interactObj;
     void Start()
     {
       
         currentObj = null;
         textdisplay.GetComponent<Canvas>().enabled = false;
-
+    
     }
     private void Awake()
     {
        
       
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
-            Ray r = new Ray(InteractorSource.position, InteractorSource.forward);
-        if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange))
+        if (currentObj != null)
         {
-            if (currentObj != null && hitInfo.collider.gameObject != currentObj)
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                interactObj.Interact();
+                if (currentObj.GetComponent<PickupKey>())
+                    currentObj.GetComponent<PickupKey>().Pickup();
+
+            }
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+            if (currentObj != null && other.gameObject != currentObj)
                 currentObj.transform.SendMessage("NotHitByRay");
             //defaultMaterial = hitInfo.collider.gameObject.GetComponent<MeshRenderer>().material;
-            if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
+            if (other.gameObject.TryGetComponent(out IInteractable interactObjsource))
             {
-             if (currentObj !=null && hitInfo.collider.gameObject != currentObj)
+                interactObj = interactObjsource;
+                if (currentObj != null && other.gameObject != currentObj)
                     currentObj.transform.SendMessage("NotHitByRay");
 
-                currentObj = hitInfo.collider.gameObject;
+                currentObj = other.gameObject;
                 currentObj.transform.SendMessage("HitByRay");
                 // currentObj.GetComponent<MeshRenderer>().material = material;
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    interactObj.Interact();
-                    if (currentObj.GetComponent<PickupKey>())
-                        currentObj.GetComponent<PickupKey>().Pickup();
-
-                }
+              
 
             }
             else
             {
-               
+
 
                 /* if (currentObj != hitInfo.collider.gameObject)
                  {
@@ -68,11 +71,15 @@ public class Interactor : MonoBehaviour
                  }
                 */
             }
-        }
+        
 
-        else {
-       
-        }
        
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        currentObj.transform.SendMessage("NotHitByRay");
+        currentObj = null;
+    }
+
 }
