@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7087140884948124781}
   - component: {fileID: 4275272232532895098}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 5742315180041133956}
   - component: {fileID: 8695780163858552848}
   - component: {fileID: -9164611529794358548}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: KillerProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
