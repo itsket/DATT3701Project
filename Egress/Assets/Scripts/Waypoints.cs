@@ -14,8 +14,9 @@ public class Waypoints : MonoBehaviour {
 
     private Vector3 previousScale;
     public bool moveOnTrigger = false;
-    private bool playerOn = false;
+    public bool playerOn = false;
 
+    private GameObject entered;
     void Start () {
         defspeed = speed;
     }
@@ -78,12 +79,10 @@ public class Waypoints : MonoBehaviour {
         if (gameObject.tag == "platform") {
         if (other.gameObject.tag == "Player")
         {
-                previousScale = player.transform.lossyScale;
-               player = other.gameObject;
-            other.transform.SetParent(transform, true);
-                playerOn = true;
 
-            
+                //  playerOn = true;
+
+                Debug.Log(other.gameObject.name);
             
          
         }
@@ -92,11 +91,11 @@ public class Waypoints : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject == player)
+        if (other.gameObject.tag == "Player")
         {
             other.transform.parent = null;
-            Debug.Log("Left");
-            player.transform.localScale = previousScale;
+            Debug.Log(other.gameObject.name + "Left1");
+            //player.transform.localScale = previousScale;
         }
     }
     /*void OnTriggerEnter(Collider n)
