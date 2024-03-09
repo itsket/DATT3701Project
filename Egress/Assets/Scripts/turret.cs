@@ -13,7 +13,7 @@ public class Turret : MonoBehaviour
     public float shootForce = 200f;
          public float upwardForce;
     public bool noWaypoint = true;
-    public float nozzleLength = 10f;
+    public float nozzleLength = 1.3f;
     public GameObject respawnPoint;
     public bool randomiseSpeed = false;
     public bool randomiseStart = false;
@@ -36,7 +36,7 @@ public class Turret : MonoBehaviour
     {
         RaycastHit hit;
         Vector3 targetPoint;
-        Vector3 origin = transform.position + transform.forward;
+        Vector3 origin = transform.position + (transform.forward* nozzleLength);
       
        
 

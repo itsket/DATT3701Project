@@ -167,7 +167,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -668,7 +668,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -935,6 +935,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9350ecd7a1abd154a8cdf67a3d9b854d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasDialogue: 1
+  keyplacement: {fileID: 0}
+  keybone: {fileID: 0}
 --- !u!114 &1111465237138489101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -953,7 +956,7 @@ MonoBehaviour:
     - There seems to be a lot of keys here
   dialogueManager: {fileID: 4342995372971855963}
   onTriggerInteract: 1
-  textdisplay: {fileID: 0}
+  canvas: {fileID: 0}
   player: {fileID: 0}
   alreadyEntered: 0
 --- !u!1 &1495112872347590094
@@ -1844,7 +1847,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1899,6 +1902,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9350ecd7a1abd154a8cdf67a3d9b854d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasDialogue: 1
+  keyplacement: {fileID: 0}
+  keybone: {fileID: 0}
 --- !u!114 &4499811210281281331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1919,7 +1925,7 @@ MonoBehaviour:
     - '[2nd Key Acquired]'
   dialogueManager: {fileID: 4342995372971855963}
   onTriggerInteract: 0
-  textdisplay: {fileID: 0}
+  canvas: {fileID: 0}
   player: {fileID: 0}
   alreadyEntered: 0
 --- !u!1 &2404057874161838358
@@ -2337,7 +2343,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2797,7 +2803,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3402,7 +3408,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17167,7 +17173,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d05d73d4e0f9fc45a655435039b87fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBroken: 0
   teleportsTo: {fileID: 2977442353363896135}
+  brokenMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
 --- !u!1 &3885592853952952709
 GameObject:
   m_ObjectHideFlags: 0
@@ -17805,7 +17814,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18398,7 +18407,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18453,6 +18462,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9350ecd7a1abd154a8cdf67a3d9b854d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasDialogue: 1
+  keyplacement: {fileID: 0}
+  keybone: {fileID: 0}
 --- !u!114 &4343153478931759902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18472,7 +18484,7 @@ MonoBehaviour:
     - 'It is impossible to reach that thing from here '
   dialogueManager: {fileID: 4342995372971855963}
   onTriggerInteract: 0
-  textdisplay: {fileID: 0}
+  canvas: {fileID: 0}
   player: {fileID: 0}
   alreadyEntered: 0
 --- !u!1 &4744420777533889165
@@ -21084,7 +21096,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21190,7 +21202,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21308,7 +21320,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21413,7 +21425,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21520,7 +21532,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21575,6 +21587,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9350ecd7a1abd154a8cdf67a3d9b854d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasDialogue: 1
+  keyplacement: {fileID: 0}
+  keybone: {fileID: 0}
 --- !u!114 &7768711384229820767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21596,7 +21611,7 @@ MonoBehaviour:
       interact with it
   dialogueManager: {fileID: 4342995372971855963}
   onTriggerInteract: 0
-  textdisplay: {fileID: 0}
+  canvas: {fileID: 0}
   player: {fileID: 0}
   alreadyEntered: 0
 --- !u!1 &5808023483430558840
@@ -21723,7 +21738,7 @@ MonoBehaviour:
     - 9
   dialogueManager: {fileID: 4342995372971855963}
   onTriggerInteract: 0
-  textdisplay: {fileID: 0}
+  canvas: {fileID: 0}
   player: {fileID: 0}
   alreadyEntered: 0
 --- !u!1 &6110511599278398534
@@ -21788,7 +21803,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -34845,7 +34860,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d05d73d4e0f9fc45a655435039b87fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBroken: 0
   teleportsTo: {fileID: 2977442353363896135}
+  brokenMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
 --- !u!1 &6815125337143663678
 GameObject:
   m_ObjectHideFlags: 0
@@ -34910,7 +34928,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -34965,6 +34983,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9350ecd7a1abd154a8cdf67a3d9b854d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasDialogue: 1
+  keyplacement: {fileID: 0}
+  keybone: {fileID: 0}
 --- !u!114 &5843742562747815605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34983,7 +35004,7 @@ MonoBehaviour:
     - Your mind tries to make sense of what you see but... it can't.
   dialogueManager: {fileID: 4342995372971855963}
   onTriggerInteract: 0
-  textdisplay: {fileID: 0}
+  canvas: {fileID: 0}
   player: {fileID: 0}
   alreadyEntered: 0
 --- !u!1 &6925646468705086190
@@ -35048,7 +35069,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -35357,6 +35378,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9350ecd7a1abd154a8cdf67a3d9b854d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasDialogue: 1
+  keyplacement: {fileID: 0}
+  keybone: {fileID: 0}
 --- !u!114 &2155989768450041472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35377,7 +35401,7 @@ MonoBehaviour:
     - '[3rd Key Acquired]'
   dialogueManager: {fileID: 4342995372971855963}
   onTriggerInteract: 0
-  textdisplay: {fileID: 0}
+  canvas: {fileID: 0}
   player: {fileID: 0}
   alreadyEntered: 0
 --- !u!1 &7319173203567591636
@@ -35499,6 +35523,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9350ecd7a1abd154a8cdf67a3d9b854d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasDialogue: 1
+  keyplacement: {fileID: 0}
+  keybone: {fileID: 0}
 --- !u!114 &5286967944341992435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35519,7 +35546,7 @@ MonoBehaviour:
     - There is only one way out and it's in front of you
   dialogueManager: {fileID: 4342995372971855963}
   onTriggerInteract: 1
-  textdisplay: {fileID: 0}
+  canvas: {fileID: 0}
   player: {fileID: 0}
   alreadyEntered: 0
 --- !u!1 &7383277628178896195
@@ -48455,7 +48482,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -48562,7 +48589,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -49047,7 +49074,7 @@ MonoBehaviour:
     - This teleporter needs a combination to use it
   dialogueManager: {fileID: 4342995372971855963}
   onTriggerInteract: 0
-  textdisplay: {fileID: 0}
+  canvas: {fileID: 0}
   player: {fileID: 0}
   alreadyEntered: 0
 --- !u!114 &8863138337554795397
@@ -49062,6 +49089,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9350ecd7a1abd154a8cdf67a3d9b854d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasDialogue: 1
+  keyplacement: {fileID: 0}
+  keybone: {fileID: 0}
 --- !u!1 &8940843317673559659
 GameObject:
   m_ObjectHideFlags: 0
@@ -50137,6 +50167,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2037570900240344134}
     m_Modifications:
+    - target: {fileID: 280060837772236449, guid: 76b93d41d6dbed240bea8a5d1cd58ea2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
     - target: {fileID: 4043838759962438395, guid: 76b93d41d6dbed240bea8a5d1cd58ea2, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -50520,6 +50554,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2037570900240344134}
     m_Modifications:
+    - target: {fileID: 280060837772236449, guid: 76b93d41d6dbed240bea8a5d1cd58ea2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
     - target: {fileID: 4043838759962438395, guid: 76b93d41d6dbed240bea8a5d1cd58ea2, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -50685,6 +50723,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2037570900240344134}
     m_Modifications:
+    - target: {fileID: 280060837772236449, guid: 76b93d41d6dbed240bea8a5d1cd58ea2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
     - target: {fileID: 4043838759962438395, guid: 76b93d41d6dbed240bea8a5d1cd58ea2, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -51114,6 +51156,10 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[7]
       value: 
       objectReference: {fileID: 4396380161035199692}
+    - target: {fileID: 8986574736879514198, guid: b69a0eef1fe77994d8e46c1eadb66023, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -51367,6 +51413,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2037570900240344134}
     m_Modifications:
+    - target: {fileID: 280060837772236449, guid: 76b93d41d6dbed240bea8a5d1cd58ea2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
     - target: {fileID: 4043838759962438395, guid: 76b93d41d6dbed240bea8a5d1cd58ea2, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -51548,6 +51598,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 280060837772236449, guid: 76b93d41d6dbed240bea8a5d1cd58ea2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
     - target: {fileID: 4774870093867352557, guid: 76b93d41d6dbed240bea8a5d1cd58ea2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.2022705

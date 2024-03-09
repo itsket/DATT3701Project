@@ -166,7 +166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90bbc178d27f7e4780a0d55963325d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractorSource: {fileID: 6624303851613998522}
   InteractRange: 3
   material: {fileID: 2100000, guid: fb66b19a885d1b64287d17a9c97f66df, type: 2}
   defaultMaterial: {fileID: 2100000, guid: 1e1a4b408565c9f4d9d4f4e593991b86, type: 2}
@@ -305,6 +304,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeManager: {fileID: 0}
+  StopTimeSlider: {fileID: 0}
+  SlowTimeSlider: {fileID: 0}
+  StoptimeCurrentCd: 0
+  SlowtimeCurrentCd: 0
+  slowCDval: 0
+  stopCDval: 0
+  StoptimeCooldown: 10
+  SlowtimeCooldown: 8
 --- !u!114 &3398714699942904649
 MonoBehaviour:
   m_ObjectHideFlags: 0
