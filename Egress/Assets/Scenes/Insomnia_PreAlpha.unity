@@ -4158,7 +4158,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5a68013686a1654b92d0ab8e7742776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 2977442353960003731}
 --- !u!65 &228494043
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19372,6 +19371,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 723079084571063541}
     - target: {fileID: 4619647997395054268, guid: ef480e09d1bf3ca4688b6cdd0d00ea9a, type: 3}
+      propertyPath: delayed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619647997395054268, guid: ef480e09d1bf3ca4688b6cdd0d00ea9a, type: 3}
       propertyPath: fireRate
       value: 10
       objectReference: {fileID: 0}
@@ -20655,6 +20658,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turret1: {fileID: 780889569}
   turret2: {fileID: 1117197682}
+  countToSeconds: 0
+  player: {fileID: 0}
 --- !u!65 &1523496403
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20766,7 +20771,7 @@ Transform:
   m_GameObject: {fileID: 1556363111}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.92, y: 15.79, z: 170.518}
+  m_LocalPosition: {x: -25.92, y: 15.79, z: 170.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -21849,6 +21854,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 723079084571063541}
+    - target: {fileID: 4619647997395054268, guid: ef480e09d1bf3ca4688b6cdd0d00ea9a, type: 3}
+      propertyPath: delayed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4619647997395054268, guid: ef480e09d1bf3ca4688b6cdd0d00ea9a, type: 3}
       propertyPath: fireRate
       value: 10
@@ -30976,7 +30985,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5a68013686a1654b92d0ab8e7742776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 1202425451}
 --- !u!65 &2119107045
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33829,6 +33837,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gotHit: 0
+  turret1: {fileID: 0}
+  turret2: {fileID: 0}
+  door1: {fileID: 0}
+  door2: {fileID: 0}
+  respawn: {fileID: 0}
 --- !u!33 &183535177314182324
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -37991,7 +38004,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5a68013686a1654b92d0ab8e7742776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 2977442353960003731}
 --- !u!23 &991400860920662776
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -38381,9 +38393,10 @@ MonoBehaviour:
   upwardForce: 0
   noWaypoint: 1
   nozzleLength: 2
-  respawnPoint: {fileID: 0}
   randomiseSpeed: 0
   randomiseStart: 0
+  delayed: 0
+  delayInSeconds: 0
 --- !u!23 &1110644829306685010
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -52538,9 +52551,10 @@ MonoBehaviour:
   upwardForce: 0
   noWaypoint: 1
   nozzleLength: 2
-  respawnPoint: {fileID: 0}
   randomiseSpeed: 0
   randomiseStart: 0
+  delayed: 0
+  delayInSeconds: 0
 --- !u!33 &1754776701738050396
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -93134,9 +93148,10 @@ MonoBehaviour:
   upwardForce: 0
   noWaypoint: 1
   nozzleLength: 10
-  respawnPoint: {fileID: 1202425451}
   randomiseSpeed: 1
   randomiseStart: 1
+  delayed: 0
+  delayInSeconds: 0
 --- !u!114 &4916942348246536431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93157,9 +93172,10 @@ MonoBehaviour:
   upwardForce: 0
   noWaypoint: 1
   nozzleLength: 10
-  respawnPoint: {fileID: 1202425451}
   randomiseSpeed: 1
   randomiseStart: 1
+  delayed: 0
+  delayInSeconds: 0
 --- !u!114 &4916942348305250884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93180,9 +93196,10 @@ MonoBehaviour:
   upwardForce: 0
   noWaypoint: 1
   nozzleLength: 10
-  respawnPoint: {fileID: 1202425451}
   randomiseSpeed: 1
   randomiseStart: 1
+  delayed: 0
+  delayInSeconds: 0
 --- !u!114 &4916942348317807780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93203,9 +93220,10 @@ MonoBehaviour:
   upwardForce: 0
   noWaypoint: 1
   nozzleLength: 10
-  respawnPoint: {fileID: 1202425451}
   randomiseSpeed: 1
   randomiseStart: 1
+  delayed: 0
+  delayInSeconds: 0
 --- !u!114 &4916942348432796844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93226,9 +93244,10 @@ MonoBehaviour:
   upwardForce: 0
   noWaypoint: 1
   nozzleLength: 10
-  respawnPoint: {fileID: 1202425451}
   randomiseSpeed: 1
   randomiseStart: 1
+  delayed: 0
+  delayInSeconds: 0
 --- !u!114 &4916942348601209073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93249,9 +93268,10 @@ MonoBehaviour:
   upwardForce: 0
   noWaypoint: 1
   nozzleLength: 10
-  respawnPoint: {fileID: 1202425451}
   randomiseSpeed: 1
   randomiseStart: 1
+  delayed: 0
+  delayInSeconds: 0
 --- !u!114 &4916942348994780975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93272,9 +93292,10 @@ MonoBehaviour:
   upwardForce: 0
   noWaypoint: 1
   nozzleLength: 10
-  respawnPoint: {fileID: 1202425451}
   randomiseSpeed: 1
   randomiseStart: 1
+  delayed: 0
+  delayInSeconds: 0
 --- !u!114 &4916942349209573516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93295,9 +93316,10 @@ MonoBehaviour:
   upwardForce: 0
   noWaypoint: 1
   nozzleLength: 10
-  respawnPoint: {fileID: 1202425451}
   randomiseSpeed: 1
   randomiseStart: 1
+  delayed: 0
+  delayInSeconds: 0
 --- !u!114 &4916942349272108784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93318,9 +93340,10 @@ MonoBehaviour:
   upwardForce: 0
   noWaypoint: 1
   nozzleLength: 10
-  respawnPoint: {fileID: 1202425451}
   randomiseSpeed: 1
   randomiseStart: 1
+  delayed: 0
+  delayInSeconds: 0
 --- !u!65 &4921295291884491653
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -102253,9 +102276,10 @@ MonoBehaviour:
   upwardForce: 0
   noWaypoint: 1
   nozzleLength: 2
-  respawnPoint: {fileID: 0}
   randomiseSpeed: 0
   randomiseStart: 0
+  delayed: 0
+  delayInSeconds: 0
 --- !u!23 &6682993814193522139
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -107579,7 +107603,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5a68013686a1654b92d0ab8e7742776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 667585078}
 --- !u!65 &8274345967260571214
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -111943,9 +111966,10 @@ MonoBehaviour:
   upwardForce: 0
   noWaypoint: 1
   nozzleLength: 2
-  respawnPoint: {fileID: 0}
   randomiseSpeed: 0
   randomiseStart: 0
+  delayed: 0
+  delayInSeconds: 0
 --- !u!1 &9188117698681417661
 GameObject:
   m_ObjectHideFlags: 0
