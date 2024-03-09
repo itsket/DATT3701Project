@@ -10,7 +10,7 @@ public class Waypoints1 : MonoBehaviour {
     public float speed;
     public bool destroyOnEnd = false;
     float WPradius = 1;
-
+    public int path = 1;
    
 
     void Start ()
@@ -30,13 +30,13 @@ public class Waypoints1 : MonoBehaviour {
                 }
             }
 
-            if (current < 2)
+            if (current >= 10)
             {
-                speed = 50;
+                speed = 100f;
             }
             else
             {
-                speed = 5f;
+                speed = 4f;
             }
         }
         float step = speed * Time.deltaTime;
