@@ -19174,6 +19174,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1413473838 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4602974569190686634, guid: ee597457810a0534789c23a24084609f, type: 3}
+  m_PrefabInstance: {fileID: 654143559}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1418930822
 Mesh:
   m_ObjectHideFlags: 0
@@ -105577,7 +105582,9 @@ MonoBehaviour:
   slowCDval: 0
   stopCDval: 0
   StoptimeCooldown: 10
-  SlowtimeCooldown: 8
+  startValue: 1
+  endValue: 0
+  lerpDuration: 8
 --- !u!23 &7825777128866808860
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -109961,11 +109968,16 @@ MonoBehaviour:
   StopTimeOn: 0
   incval: 0
   stopincval: 0
-  slowCDval: 0
   stopCDval: 0
+  startValue: 1
+  endValue: 0
+  lerpDuration: 8
+  Fill: {fileID: 1413473838}
   SlowTimeDurationSlider: {fileID: 654143561}
+  SlowTimeSlider: {fileID: 654143563}
   slider: {fileID: 1878095703}
   SlowTimeDuration: 10
+  uses: 3
 --- !u!33 &8661721609213308883
 MeshFilter:
   m_ObjectHideFlags: 0

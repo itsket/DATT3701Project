@@ -20,21 +20,30 @@ public class TimeManager : MonoBehaviour
     public int stopincval = 0;
 
     //these two numbers are for the inputmanager to have their own values
-    public int slowCDval = 0;
+    
     public int stopCDval = 0;
 
-
+    public float startValue = 1.0f;
+    public float endValue = 0.0f;
+    public float lerpDuration = 8.0f;
+   
+    private float currentTime = 0.0f;
+    public GameObject Fill; 
     public Slider SlowTimeDurationSlider;
+    public Slider SlowTimeSlider;
     public Canvas slider;
     public float SlowTimeDuration = 10;
+    public int uses = 3;
 
+    private bool depleted = false;
+
+    float t;
+    float lerpedValue;
     private void Start()
     {
         StopTimeDurationSlider.minValue = 0;
         StopTimeDurationSlider.maxValue = 1;
-        SlowTimeDurationSlider.minValue = 0;
-        SlowTimeDurationSlider.maxValue = 1;
-
+     
 
     }
 
@@ -42,58 +51,60 @@ public class TimeManager : MonoBehaviour
     {
 
         StopTimeDurationSlider.value = stopincval / StopTimeDuration;
-        SlowTimeDurationSlider.value = incval / SlowTimeDuration;
+ 
 
 
     }
     void LateUpdate()
+    
     {
+        Debug.Log(val + "OVER HERE" + "\n Slowmo: " + slowmo);
+
         // ones per in seconds
         TimeInterval += Time.unscaledDeltaTime;
-        if (TimeInterval >= 1)
+        if (depleted && !slowmo)
         {
-            TimeInterval = 0;
-            //Debug.Log("Time Remaining: " + val);
-            if (slowmo)
+            currentTime += Time.unscaledDeltaTime;
+            t = Mathf.Clamp01(currentTime / lerpDuration);
+            lerpedValue = Mathf.Lerp(endValue, startValue, t * 1.2f);
+            SlowTimeSlider.value = lerpedValue;
+
+            if (currentTime >= lerpDuration)
             {
-               // SlowTimeDurationSlider.gameObject.SetActive(true);
-                val--;
-                incval++;
-                slowCDval++;
+                // Reset timer
+                currentTime = 0.0f;
+                uses = 3;
+                depleted = false;
+                Debug.Log("Replenished finished!");
+                Fill.GetComponent<Image>().color = Color.green;
+              
             }
-
-            if (StopTimeOn)
-            {
-               // StopTimeDurationSlider.gameObject.SetActive(true);
-                stopincval++;
-                stopCDval++;
-            }
-
-            if (stopCDval >= 10)
-            {
-                stopCDval = 0;
-            }
-            else if (slowCDval >= 8)
-            {
-                slowCDval = 0;
-            }
-
-            if (val <= 0)
-            {
-                Time.timeScale = 1f;
-                Time.fixedDeltaTime = .02f;
-                val = reset;
-                slowmo = false;
-                StopTimeOn = false;
-                incval = 0;
-                stopincval = 0;
-                StopTimeDurationSlider.gameObject.SetActive(false);
-                SlowTimeDurationSlider.gameObject.SetActive(false);
-
-            }
-
-
         }
+        if (slowmo) {
+            currentTime += Time.unscaledDeltaTime;
+             t = Mathf.Clamp01(currentTime / lerpDuration);
+             lerpedValue = Mathf.Lerp(startValue, endValue, t);
+            SlowTimeSlider.value = lerpedValue;
+            
+            if (currentTime >= lerpDuration)
+            {
+                // Reset timer
+                currentTime = 0.0f;
+             
+              
+               SlowMotion(99);
+                Debug.Log("Lerp finished!");
+                if (uses <= 0)
+                {
+                    depleted = true;
+                    Fill.GetComponent<Image>().color = Color.red;
+                }
+                // Optionally, you might want to perform some action when the lerp is finished.
+                // For example:
+                // Debug.Log("Lerp finished!");
+            }
+        }
+   
     }
     public void SlowMotion(int v)
     {
@@ -116,11 +127,22 @@ public class TimeManager : MonoBehaviour
                     Time.timeScale = slowdownFactor;
                     Time.fixedDeltaTime = Time.timeScale * .02f;
 
-                    val = reset;
-                    slowmo = true;
+                   
+                   
+                 
 
-
-
+                    Debug.Log("FRom Start");
+                    if (uses > 0)
+                    {
+                        currentTime = 0.0f;
+                        slowmo = true;
+                        uses--;
+                    }
+                    else
+                    {
+                        depleted = true;
+                        Fill.GetComponent<Image>().color = Color.red;
+                    }
                 }
 
             }
@@ -145,13 +167,25 @@ public class TimeManager : MonoBehaviour
                     Time.fixedDeltaTime = Time.timeScale * .02f;
 
                     val = reset;
-                    slowmo = true;
-
+                   
+                   
+                    Debug.Log("ADDITIONAL");
+                    if (uses > 0)
+                    {
+                        currentTime = 0.0f;
+                        slowmo = true;
+                        uses--;
+                    }
+                    else {
+                        depleted = true;
+                        Fill.GetComponent<Image>().color = Color.red;
+                    }
 
 
                 }
                 else if (v == 99)
                 {
+                    Debug.Log("REGULAR TIME");
                     Time.timeScale = 1f;
                     Time.fixedDeltaTime = .02f;
                     val = reset;

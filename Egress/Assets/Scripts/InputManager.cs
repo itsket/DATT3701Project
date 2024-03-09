@@ -29,9 +29,16 @@ public class InputManager : MonoBehaviour
     public int stopCDval = 0;
 
     public float StoptimeCooldown = 10f;
-    public float SlowtimeCooldown = 8f;
-
+  
+    float lerped = 1.00f;
     // Start is called before the first frame update
+
+    public float startValue = 1.0f;
+    public float endValue = 0.0f;
+    public float lerpDuration = 8.0f;
+
+    private float currentTime = 0.0f;
+
     void Awake()
     {
         playerInput = new PlayerInput();
@@ -41,8 +48,8 @@ public class InputManager : MonoBehaviour
         onFoot.Jump.performed += ctx => motor.Jump();
         onFoot.Starplat.performed += ctx =>
         {
-            //timeManager.SlowMotion(99);
-            SlowtimePressed = true;
+            timeManager.SlowMotion(1);
+           // SlowtimePressed = true;
             //checkStoptimeCooldown();
    
         };
@@ -64,8 +71,8 @@ public class InputManager : MonoBehaviour
     {
         StopTimeSlider.minValue = 0;
         StopTimeSlider.maxValue = StoptimeCooldown;
-        SlowTimeSlider.minValue = 0;
-        SlowTimeSlider.maxValue = SlowtimeCooldown;
+        SlowTimeSlider.minValue = 0.00f;
+        SlowTimeSlider.maxValue = 1.00f;
     }
     private void checkStoptimeCooldown()
     {
@@ -85,10 +92,8 @@ public class InputManager : MonoBehaviour
 
         //move slider
         StopTimeSlider.value = StoptimeCurrentCd;
-        SlowTimeSlider.value = SlowtimeCurrentCd;
+      
 
-
-        
 
         //checks if button pressed and cd is finished
         if (StoptimePressed && StoptimeCurrentCd <= 0)
@@ -103,13 +108,13 @@ public class InputManager : MonoBehaviour
         }
 
         //checks if button pressed and cd is finished
-        if (SlowtimePressed && SlowtimeCurrentCd <= 0)
+        if (SlowtimePressed)
         {
-            slowCDval = 0;
-            timeManager.SlowMotion(1);
-            SlowTimeSlider.value = 1;
-            SlowtimeCurrentCd = SlowtimeCooldown;
-
+         
+        
+        
+           
+           
             return;
         }
 
@@ -120,24 +125,16 @@ public class InputManager : MonoBehaviour
         }
 
         // unscaled time so you will need exactly 10 or 8 seconds for it to be used again, make sure duration is less than this
-        SlowtimeCurrentCd -= Time.unscaledDeltaTime;
+       
         StoptimeCurrentCd -= Time.unscaledDeltaTime;
 
-        
-
-
-
-    }
-
-
-
-    private void LateUpdate()
-    {
-     
-        
 
        
+
     }
+
+
+
     private void OnEnable()
     {
         onFoot.Enable();
