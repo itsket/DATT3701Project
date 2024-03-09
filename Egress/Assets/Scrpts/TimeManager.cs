@@ -191,6 +191,7 @@ public class TimeManager : MonoBehaviour
                     val = reset;
                     slowmo = false;
                     StopTimeOn = false;
+                    SlowTimeSlider.value = 1f;
                 }
             }
            

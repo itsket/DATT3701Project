@@ -1,5 +1,6 @@
 
 using System;
+using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -14,23 +15,57 @@ public class Turret : MonoBehaviour
          public float upwardForce;
     public bool noWaypoint = true;
     public float nozzleLength = 1.3f;
-    public GameObject respawnPoint;
+   
     public bool randomiseSpeed = false;
     public bool randomiseStart = false;
+    public bool delayed = false;
+    public int delayInSeconds;
+    private float timer;
+    private bool canShoot;
+    private float currentDelay;
+
+    private void Start()
+    {
+      
+    }
     void Update()
     {
-        if (randomiseStart && !isFiring)
-        {
-            int rando = Random.Range(-1000,1000);
-            if (rando > 980 ) {
-                isFiring = true;
+        if (delayed) {
+            if (canShoot)
+            {
+                Shoot(); // Call your shoot function here
+                canShoot = false;
+                currentDelay = Random.Range(delayInSeconds-2, delayInSeconds+2);
+            }
+            else
+            {
+                timer += Time.deltaTime;
+                if (timer >= currentDelay)
+                {
+                    canShoot = true;
+                    timer = 0f;
+                }
             }
         }
-        if (isFiring && Time.time >= nextFire) {
-            nextFire = Time.time + 10f/fireRate;
-            Shoot();
+       
+        else
+        {
+            if (randomiseStart && !isFiring)
+            {
+                int rando = Random.Range(-1000, 1000);
+                if (rando > 980)
+                {
+                    isFiring = true;
+                }
+            }
+            if (isFiring && Time.time >= nextFire)
+            {
+                nextFire = Time.time + 10f / fireRate;
+                Shoot();
+            }
         }
     }
+
 
     void Shoot()
     {
@@ -62,8 +97,7 @@ public class Turret : MonoBehaviour
         if (currentProj.GetComponent<DestroyProjectile>() != null)
             currentProj.GetComponent<DestroyProjectile>().projectileLifeSpan = lifeSpan;
 
-        if (respawnPoint != null)
-        currentProj.GetComponent<slowLevel_1>().respawnPoint = respawnPoint;
+   
      }
 
     }

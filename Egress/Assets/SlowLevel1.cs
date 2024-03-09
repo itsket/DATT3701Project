@@ -9,6 +9,7 @@ public class slowLevel_1 : MonoBehaviour
    private Rigidbody rb;
     private Vector3 max;
     public bool killer = false;
+     public bool resetAreaOnKill = false;
     public bool summoner = false;
     public GameObject respawnPoint;
     private void Awake()
@@ -38,8 +39,8 @@ public class slowLevel_1 : MonoBehaviour
         }
 
         else if (other.gameObject.tag == "Player" && killer) {
-            other.gameObject.transform.position = respawnPoint.transform.position;
-            
+            other.gameObject.SendMessage("Die");
+            other.gameObject.SendMessage("ResetRoom");
         }
 
       

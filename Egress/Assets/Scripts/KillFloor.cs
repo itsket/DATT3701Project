@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KillFloor : MonoBehaviour
 {
-    public GameObject respawnPoint;
+ 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag != "Player" && other.gameObject.tag != "key")
@@ -12,8 +12,7 @@ public class KillFloor : MonoBehaviour
             Destroy(other.gameObject);
         }
         else {
-            other.gameObject.transform.position = respawnPoint.transform.position;
-            other.gameObject.transform.rotation = respawnPoint.transform.rotation;
+            other.gameObject.SendMessage("Die");
 
         }
     }

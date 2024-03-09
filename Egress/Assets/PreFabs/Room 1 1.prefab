@@ -613,7 +613,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isUnlocked: 0
   moveto: {fileID: 0}
-  anim: {fileID: 0}
 --- !u!1 &291153834886264537
 GameObject:
   m_ObjectHideFlags: 0
@@ -3380,7 +3379,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 25a9fb42d361f46ad89221f6d301e96e, type: 2}
+  - {fileID: 2100000, guid: e83150bd3911b414897292ca0b7cdce3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4670,7 +4669,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isUnlocked: 0
   moveto: {fileID: 279611964261843029}
-  anim: {fileID: 0}
 --- !u!114 &3687917905026218096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7922,7 +7920,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isUnlocked: 0
   moveto: {fileID: 8442723296593255095}
-  anim: {fileID: 6258697895384505998}
 --- !u!4 &9106635477727526925 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7189433090900516163, guid: 976311243bf327c42986a68a5ffd4abe, type: 3}
