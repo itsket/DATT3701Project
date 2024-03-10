@@ -18,6 +18,7 @@ public class keyplacement : MonoBehaviour
     public bool isExit = false;
     public GameObject exitDoor1;
     public GameObject exitDoor2;
+    public GameObject teleporter;
     public void KeyEntered(GameObject key1)
     {
         /*
@@ -73,6 +74,7 @@ public class keyplacement : MonoBehaviour
                 {
                     beam.GetComponent<TurnOffForceField>().unlocked2 = true;
                     beam.GetComponent<TurnOffForceField>().DestroyBeam();
+                    teleporter.GetComponent<Teleporter>().canteleport = true;
                 }
                 if (unlocked2 && unlocked1)
                 {
