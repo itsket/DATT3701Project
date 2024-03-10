@@ -11,7 +11,7 @@ public class Waypoints1 : MonoBehaviour {
     public bool destroyOnEnd = false;
     float WPradius = 1;
 
-   
+    public bool path2 = false;
 
     void Start ()
     {
@@ -29,15 +29,18 @@ public class Waypoints1 : MonoBehaviour {
                     Destroy(gameObject);
                 }
             }
-
-            if (current < 2)
+            if (path2 && current >= 9)
             {
-                speed = 50;
+                speed = 120f;
+            }
+            else if (path2 && current >= 8) { 
+            speed = 1f;
             }
             else
             {
                 speed = 5f;
             }
+            
         }
         float step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, waypoints[current].transform.position, step);
