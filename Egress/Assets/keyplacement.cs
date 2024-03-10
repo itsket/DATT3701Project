@@ -16,7 +16,8 @@ public class keyplacement : MonoBehaviour
     public bool unlocked1 = false;
     public bool unlocked2 = false;
     public bool isExit = false;
-    public GameObject exitDoor;
+    public GameObject exitDoor1;
+    public GameObject exitDoor2;
     public void KeyEntered(GameObject key1)
     {
         /*
@@ -80,7 +81,8 @@ public class keyplacement : MonoBehaviour
                     beam.GetComponent<TurnOffForceField>().DestroyBeam();
                 }
                 else if (isExit) {
-                    exitDoor.GetComponent<OpenDoor>().isUnlocked = true;
+                    exitDoor1.GetComponent<OpenDoor>().isUnlocked = true;
+                    exitDoor2.GetComponent<OpenDoor>().isUnlocked = true;
                     currentkey.transform.parent = gameObject.transform;
                 }
                 
