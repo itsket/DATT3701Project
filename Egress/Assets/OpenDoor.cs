@@ -7,7 +7,7 @@ public class OpenDoor : MonoBehaviour
 {
     // Start is called before the first frame update
     public bool isUnlocked = false;
-    public GameObject moveto;
+    public GameObject unlockPostion;
     public GameObject secondPosition;
     // Update is called once per frame
     void Update()
@@ -15,7 +15,7 @@ public class OpenDoor : MonoBehaviour
         if (isUnlocked)
         {
             float step = 3f * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, moveto.transform.position, step);
+            transform.position = Vector3.MoveTowards(transform.position, unlockPostion.transform.position, step);
         }
 
         else if (!secondPosition.Equals(null) && !isUnlocked) {
