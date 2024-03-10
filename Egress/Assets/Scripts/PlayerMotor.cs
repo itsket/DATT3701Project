@@ -74,7 +74,7 @@ public class PlayerMotor : MonoBehaviour
         Debug.Log(other.gameObject.name + "triggered");
         if (other.gameObject.tag == "platform" )
         {
-            Debug.Log(other.gameObject.name + "on platform");
+            Debug.Log(gameObject.name + "on platform");
             
             transform.SetParent(other.transform.parent.transform,true);
             other.transform.parent.gameObject.GetComponent<Waypoints>().playerOn = true;

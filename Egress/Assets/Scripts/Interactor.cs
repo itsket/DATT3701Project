@@ -44,19 +44,16 @@ public class Interactor : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-            if (currentObj != null && other.gameObject != currentObj)
+          /*  if (currentObj != null && other.gameObject != currentObj)
                 currentObj.transform.SendMessage("NotHitByRay");
+          */
             //defaultMaterial = hitInfo.collider.gameObject.GetComponent<MeshRenderer>().material;
             if (other.gameObject.TryGetComponent(out IInteractable interactObjsource))
             {
-                interactObj = interactObjsource;
-                if (currentObj != null && other.gameObject != currentObj)
-                    currentObj.transform.SendMessage("NotHitByRay");
-
-                currentObj = other.gameObject;
-                currentObj.transform.SendMessage("HitByRay");
-                // currentObj.GetComponent<MeshRenderer>().material = material;
-              
+            currentObj = other.gameObject;
+            interactObj = interactObjsource;
+            currentObj.transform.SendMessage("HitByRay");
+    
 
             }
             else

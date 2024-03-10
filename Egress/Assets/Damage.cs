@@ -13,6 +13,7 @@ public class Damage : MonoBehaviour
     public GameObject door3;
     public GameObject door4;
     public GameObject respawn;
+    public GameObject challengeRoom;
     public void Die()
     {
       
@@ -26,5 +27,7 @@ public class Damage : MonoBehaviour
         door2.GetComponent<OpenDoor>().isUnlocked = true;
         door3.GetComponent<OpenDoor>().isUnlocked = true;
         door4.GetComponent<OpenDoor>().isUnlocked = true;
+        challengeRoom.GetComponent<Wethermon>().isInRoom = false;
+        challengeRoom.GetComponent<Wethermon>().timer = 0f;
     }
 }

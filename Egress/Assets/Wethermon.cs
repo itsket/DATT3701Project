@@ -12,14 +12,16 @@ public class Wethermon : MonoBehaviour
     public GameObject door4;
     private bool hasCountedToSeconds;
     private bool completed =false;
-    private float timer;
+    public float timer;
     public float countToSeconds;
     public GameObject player;
+    public bool isInRoom = false;
 
     private void Update()
     {
         if (!hasCountedToSeconds)
         {
+            if(isInRoom)
             timer += Time.deltaTime; 
 
             if (timer >= countToSeconds)
@@ -52,7 +54,9 @@ public class Wethermon : MonoBehaviour
             door2.GetComponent<OpenDoor>().isUnlocked = false;
             door3.GetComponent<OpenDoor>().isUnlocked = false;
             door4.GetComponent<OpenDoor>().isUnlocked = false;
-       
+            isInRoom = true;
+
+
         }
 
      
