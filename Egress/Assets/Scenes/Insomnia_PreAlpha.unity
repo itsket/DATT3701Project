@@ -18626,11 +18626,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &1413473838 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4602974569190686634, guid: ee597457810a0534789c23a24084609f, type: 3}
-  m_PrefabInstance: {fileID: 654143559}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1418930822
 Mesh:
   m_ObjectHideFlags: 0
@@ -97190,7 +97185,7 @@ Transform:
   m_GameObject: {fileID: 723079084571063541}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.9965865, z: 0, w: 0.08255598}
-  m_LocalPosition: {x: 5.73, y: 11.85, z: 169.79}
+  m_LocalPosition: {x: -7.16, y: 11.85, z: 205.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -109885,9 +109880,9 @@ MonoBehaviour:
   startValue: 1
   endValue: 0
   lerpDuration: 8
-  Fill: {fileID: 1413473838}
+  Fill: {fileID: 0}
   SlowTimeDurationSlider: {fileID: 654143561}
-  SlowTimeSlider: {fileID: 654143563}
+  SlowTimeSlider: {fileID: 0}
   slider: {fileID: 1878095703}
   SlowTimeDuration: 10
   uses: 3
