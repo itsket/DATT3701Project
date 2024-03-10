@@ -42,7 +42,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Fill: 0.1
-    - _Offset: -6.93
+    - _Offset: -6.83
     - _QueueControl: 0
     - _QueueOffset: 0
     - _fresnal_power: 5
