@@ -7,7 +7,7 @@ public class KillFloor : MonoBehaviour
  
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag != "Player" && other.gameObject.tag != "key")
+        if (other.gameObject.tag != "Player" && other.gameObject.tag != "key" && other.gameObject.tag != "teleporter")
         {
             Destroy(other.gameObject);
         }
