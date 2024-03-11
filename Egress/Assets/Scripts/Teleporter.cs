@@ -12,7 +12,8 @@ public class Teleporter : MonoBehaviour
     public Material defaultMaterial = null;
     void Start()
     {
-       
+       if (!canteleport)
+            GetComponent<Renderer>().material = brokenMaterial;
     }
 
     // Update is called once per frame
@@ -28,6 +29,7 @@ public class Teleporter : MonoBehaviour
         if (canteleport)
         {
             other.gameObject.transform.position = teleportsTo.transform.position;
+            GetComponent<Renderer>().material = defaultMaterial;
         }
         
         // other.gameObject.transform.Rotate(0, 0, 0, Space.World);

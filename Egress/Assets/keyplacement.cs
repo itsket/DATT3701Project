@@ -74,7 +74,11 @@ public class keyplacement : MonoBehaviour
                 {
                     beam.GetComponent<TurnOffForceField>().unlocked2 = true;
                     beam.GetComponent<TurnOffForceField>().DestroyBeam();
-                    teleporter.GetComponent<Teleporter>().canteleport = true;
+                    if (teleporter != null)
+                    {
+                        teleporter.GetComponent<Teleporter>().canteleport = true;
+                        teleporter.GetComponent<Renderer>().material = teleporter.GetComponent<Teleporter>().defaultMaterial;
+                    }
                 }
                 if (unlocked2 && unlocked1)
                 {
