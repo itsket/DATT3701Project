@@ -58,7 +58,7 @@ public class InputManager : MonoBehaviour
         onFoot.zawordo.performed += ctx =>
         {
             //timeManager.SlowMotion(0);
-            StoptimePressed = true;
+           // StoptimePressed = true;
         };
         onFoot.ResetTime.performed += ctx => timeManager.SlowMotion(99);
 

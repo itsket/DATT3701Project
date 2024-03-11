@@ -69,7 +69,7 @@ public class TimeManager : MonoBehaviour
             t = Mathf.Clamp01(currentTime / lerpDuration);
             lerpedValue = Mathf.Lerp(endValue, startValue, t * 1.2f);
             SlowTimeSlider.value = lerpedValue;
-            uses = 0;
+        
             if (SlowTimeSlider.value ==1)
            
             {
@@ -126,9 +126,6 @@ public class TimeManager : MonoBehaviour
 
                 else if (v==1)
                 {
-                    Time.timeScale = slowdownFactor;
-                    Time.fixedDeltaTime = Time.timeScale * .02f;
-
                    
                    
                  
@@ -136,6 +133,10 @@ public class TimeManager : MonoBehaviour
                     Debug.Log("FRom Start");
                     if (uses > 0)
                     {
+                        Time.timeScale = slowdownFactor;
+                        Time.fixedDeltaTime = Time.timeScale * .02f;
+
+
                         currentTime = 0.0f;
                         slowmo = true;
                         uses--;
@@ -166,15 +167,16 @@ public class TimeManager : MonoBehaviour
                 }
                 else if (v == 1)
                 {
-                    Time.timeScale = slowdownFactor;
-                    Time.fixedDeltaTime = Time.timeScale * .02f;
-
+                  
                     val = reset;
                    
                    
                     Debug.Log("ADDITIONAL");
                     if (uses > 0)
                     {
+                        Time.timeScale = slowdownFactor;
+                        Time.fixedDeltaTime = Time.timeScale * .02f;
+
                         currentTime = 0.0f;
                         slowmo = true;
                         uses--;
