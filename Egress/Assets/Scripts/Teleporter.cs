@@ -26,7 +26,7 @@ public class Teleporter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (canteleport)
+        if (canteleport && other.tag.Equals("Player"))
         {
             other.gameObject.transform.position = teleportsTo.transform.position;
             GetComponent<Renderer>().material = defaultMaterial;
