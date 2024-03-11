@@ -59,17 +59,19 @@ public class TimeManager : MonoBehaviour
     
     {
         Debug.Log(val + "OVER HERE" + "\n Slowmo: " + slowmo);
-
+        Debug.Log("USES: " + uses);
         // ones per in seconds
         TimeInterval += Time.unscaledDeltaTime;
         if (depleted && !slowmo)
         {
+        
             currentTime += Time.unscaledDeltaTime;
             t = Mathf.Clamp01(currentTime / lerpDuration);
             lerpedValue = Mathf.Lerp(endValue, startValue, t * 1.2f);
             SlowTimeSlider.value = lerpedValue;
-
-            if (currentTime >= lerpDuration)
+            uses = 0;
+            if (SlowTimeSlider.value ==1)
+           
             {
                 // Reset timer
                 currentTime = 0.0f;
@@ -137,6 +139,7 @@ public class TimeManager : MonoBehaviour
                         currentTime = 0.0f;
                         slowmo = true;
                         uses--;
+                        Debug.Log("USES: " + uses);
                     }
                     else
                     {
@@ -175,6 +178,7 @@ public class TimeManager : MonoBehaviour
                         currentTime = 0.0f;
                         slowmo = true;
                         uses--;
+                        Debug.Log("USES: " + uses);
                     }
                     else {
                         depleted = true;
