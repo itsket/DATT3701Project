@@ -9,6 +9,16 @@ public class Stars : MonoBehaviour
     public GameObject intializedMesh;
     public int numPoints = 100;
     public Material invicible;
+    [SerializeField] private int layer1 = 8;
+    [SerializeField] private int layer2 = 0;
+    private int layerAsLayerMask1;
+    private int layerAsLayerMask2;
+
+    private void Awake()
+    {
+        layerAsLayerMask1 = (1 << layer1);
+        layerAsLayerMask2 = (1 << layer2);
+    }
     void Start()
     {
         gameObject.GetComponent<MeshRenderer>().material = invicible;
@@ -30,15 +40,33 @@ public class Stars : MonoBehaviour
                 randomPoint = gameObject.transform.TransformPoint(randomPoint);
                 points[pointsGenerated] = randomPoint;
                 pointsGenerated++;
+            if (IsInMesh(randomPoint)) {
 
-               
                 GameObject currentStar = Instantiate(intializedMesh, randomPoint, Quaternion.identity);
-          //  currentStar.transform.SetParent(transform); 
-            currentStar.transform.localScale = currentStar.transform.localScale * Random.Range(.1f,1f);
+                //  currentStar.transform.SetParent(transform); 
+                currentStar.transform.localScale = currentStar.transform.localScale * Random.Range(.1f, 1f);
+            }
 
             
         }
 
+        bool IsInMesh(Vector3 givenPoint)
+           
+        {
+          
+            Collider[] hitColliders = Physics.OverlapSphere(givenPoint, 0f, layerAsLayerMask1);
+            Collider[] hitColliders2 = Physics.OverlapSphere(givenPoint, 0f, layerAsLayerMask2);
+
+          
+
+            if (hitColliders.Length > 0 && hitColliders2.Length == 0)
+            {
+                return true;
+            }
+            else { 
+            return false;
+            }
+        }
        
         
     }

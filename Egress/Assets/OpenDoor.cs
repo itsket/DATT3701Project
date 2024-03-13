@@ -19,7 +19,7 @@ public class OpenDoor : MonoBehaviour
         }
 
         else if (!secondPosition.Equals(null) && !isUnlocked) {
-            float step = 3f * Time.deltaTime;
+            float step = 3f * Time.unscaledDeltaTime;
             transform.position = Vector3.MoveTowards(transform.position, secondPosition.transform.position, step);
         }
     }
