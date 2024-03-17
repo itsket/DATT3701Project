@@ -12,17 +12,18 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _ALPHAPREMULTIPLY_ON
-  - _SPECULAR_SETUP
+  - _ALPHAMODULATE_ON
+  - _RECEIVE_SHADOWS_OFF
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
-  m_LightmapFlags: 2
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 3000
   stringTagMap:
     RenderType: Transparent
   disabledShaderPasses:
+  - SHADOWCASTER
   - DepthOnly
   m_LockedProperties: 
   m_SavedProperties:
@@ -44,23 +45,23 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _Blend: 0
+    - _Blend: 3
     - _BlendModePreserveSpecular: 1
-    - _CastShadows: 1
-    - _Cull: 0
-    - _DstBlend: 10
-    - _IntersectionDepth: 10.78
+    - _CastShadows: 0
+    - _Cull: 2
+    - _DstBlend: 0
+    - _IntersectionDepth: 5.06
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _ReceiveShadows: 1
-    - _SrcBlend: 1
+    - _ReceiveShadows: 0
+    - _SrcBlend: 2
     - _Surface: 1
-    - _WorkflowMode: 0
+    - _WorkflowMode: 1
     - _ZTest: 4
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _IntersectionColor: {r: 917.73584, g: 30.302616, b: 56.640163, a: 0.36862746}
+    - _IntersectionColor: {r: 419.40027, g: 28.109823, b: 766.99634, a: 0.2627451}
   m_BuildTextureStacks: []
 --- !u!114 &741801828933323017
 MonoBehaviour:

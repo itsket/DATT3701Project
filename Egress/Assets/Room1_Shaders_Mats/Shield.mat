@@ -13,7 +13,7 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 6
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -85,14 +85,14 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Fill: -0.47
+    - _Fill: -0.93
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Offset: -6.93
+    - _Offset: -4.04
     - _Parallax: 0.02
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -102,10 +102,10 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     - _alpha_intensity: 0.46
-    - _fresnal_power: 5
-    - _scroll_speed: 0.06
+    - _fresnal_power: 0.25
+    - _scroll_speed: 0.08
     m_Colors:
-    - _Color: {r: 0.028301895, g: 0, b: 0.0017283552, a: 0.007843138}
+    - _Color: {r: 0.07704397, g: 0, b: 0.26415092, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
