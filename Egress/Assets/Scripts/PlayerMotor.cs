@@ -12,7 +12,7 @@ public class PlayerMotor : MonoBehaviour
     public float jumpHeight = 1f;
     public TimeManager timeManager;
     public bool inLimitless = false;
- 
+    public float playerSpeedSetter = 5f;
 
     void Start()
     {
@@ -29,7 +29,7 @@ public class PlayerMotor : MonoBehaviour
             speed = 1f;
         }
         else if (isGrounded ) { 
-            speed = 5f;
+            speed = playerSpeedSetter;
             Debug.Log("Ground");
         }
         else
@@ -38,9 +38,9 @@ public class PlayerMotor : MonoBehaviour
         }
 
 
-        if (playerVelocity.y < -10)
+        if (playerVelocity.y < -20)
         {
-            playerVelocity.y = -10;
+            playerVelocity.y = -20;
         }
     }
 
