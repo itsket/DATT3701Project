@@ -8,7 +8,7 @@ public class DisableWaypoint : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
-        if(w.gameObject.activeSelf == true)
+        if(w.gameObject.activeSelf == true && other.gameObject.CompareTag("Player"))
         w.GetComponent<WaypointHandler>().disappear();
 
     }
