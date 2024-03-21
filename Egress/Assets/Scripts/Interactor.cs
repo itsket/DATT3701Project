@@ -50,6 +50,10 @@ public class Interactor : MonoBehaviour
             //defaultMaterial = hitInfo.collider.gameObject.GetComponent<MeshRenderer>().material;
             if (other.gameObject.TryGetComponent(out IInteractable interactObjsource))
             {
+            if (currentObj != null) {
+                currentObj.transform.SendMessage("NotHitByRay");
+               
+            }
             currentObj = other.gameObject;
             interactObj = interactObjsource;
             currentObj.transform.SendMessage("HitByRay");
