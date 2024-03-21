@@ -22,21 +22,15 @@ public class keypad : MonoBehaviour
 
     public void PasswordEntry(string number)
     {
-        if (number == "Clear")
-        {
-            //if Clear button pressed
-            Clear();
-            return;
-        }
-        else if(number == "Enter")
-        {
-            //if Enter button pressed
-
-            Enter();
-            return;
-        }
-
         int length = passwordText.text.ToString().Length;
+
+        if(length==3){
+            Enter();
+        } else if(length>3){
+            Clear();
+        }
+        
+
        
     }
 
@@ -59,7 +53,8 @@ public class keypad : MonoBehaviour
         }
         else
         {
-            //script for locked
+            //script for locked 
+            //dont add anything cause if locked it should do nothing
 
             passwordText.color = Color.red;
             Clear();
