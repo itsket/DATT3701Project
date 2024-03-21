@@ -123,7 +123,7 @@ Material:
     - _foamcutoff: 1.33
     - _refraction_scale: 3
     - _refraction_speed: 0.01
-    - _refraction_strength: 16.6
+    - _refraction_strength: 5.26
     - _waterdept: 37.15
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}

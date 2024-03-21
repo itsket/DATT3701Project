@@ -50,14 +50,7 @@ public class Turret : MonoBehaviour
        
         else
         {
-            if (randomiseStart && !isFiring)
-            {
-                int rando = Random.Range(-1000, 1000);
-                if (rando > 980)
-                {
-                    isFiring = true;
-                }
-            }
+         
             if (isFiring && Time.time >= nextFire)
             {
                 nextFire = Time.time + 10f / fireRate;
@@ -84,15 +77,10 @@ public class Turret : MonoBehaviour
 
         if (noWaypoint)
         {
-            if (randomiseSpeed)
-            {
-                
-                currentProj.GetComponent<Rigidbody>().AddForce(direction.normalized * Random.Range(shootForce, shootForce*1.5f) , ForceMode.Impulse);
-            }
-            else
-            {
+           
+            
                 currentProj.GetComponent<Rigidbody>().AddForce(direction.normalized * shootForce, ForceMode.Impulse);
-            }
+            
         }
         if (currentProj.GetComponent<DestroyProjectile>() != null)
             currentProj.GetComponent<DestroyProjectile>().projectileLifeSpan = lifeSpan;
