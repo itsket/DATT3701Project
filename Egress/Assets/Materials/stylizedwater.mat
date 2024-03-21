@@ -124,11 +124,11 @@ Material:
     - _refraction_scale: 3
     - _refraction_speed: 0.1
     - _refraction_strength: 2
-    - _waterdept: 69.1
+    - _waterdept: 80
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Deep: {r: 0.06737617, g: 0.018511934, b: 0.3018868, a: 0.19607843}
+    - _Deep: {r: 0.0010679982, g: 0.21277039, b: 0.2901961, a: 0.19607843}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _foamColour: {r: 0, g: 0.4811321, b: 0.2109759, a: 0}
