@@ -39,21 +39,7 @@ public class keyplacement : MonoBehaviour
             currentkey.transform.position = gameObject.transform.position;
             currentkey.transform.localScale = previousSize * 2;
             currentkey.transform.rotation = gameObject.transform.rotation;
-            if (currentkey.GetComponent<StoryElement>().dialogue.name == correctKey)
-            {
-                Debug.Log("correctKey key1");
-
-                if (unlocked1)
-                {
-                    beam.GetComponent<TurnOffForceField>().unlocked1 = true;
-                    beam.GetComponent<TurnOffForceField>().DestroyBeam();
-                }
-                if (unlocked2)
-                {
-                    beam.GetComponent<TurnOffForceField>().unlocked2 = true;
-                    beam.GetComponent<TurnOffForceField>().DestroyBeam();
-                }
-            }
+       
         }
         else if (currentkey == null)
         {

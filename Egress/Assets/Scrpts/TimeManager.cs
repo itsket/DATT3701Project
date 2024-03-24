@@ -67,7 +67,7 @@ public class TimeManager : MonoBehaviour
         
             currentTime += Time.unscaledDeltaTime;
             t = Mathf.Clamp01(currentTime / lerpDuration);
-            lerpedValue = Mathf.Lerp(endValue, startValue, t * 1.2f);
+            lerpedValue = Mathf.Lerp(endValue, startValue, t * 1f);
             SlowTimeSlider.value = lerpedValue;
         
             if (SlowTimeSlider.value ==1)

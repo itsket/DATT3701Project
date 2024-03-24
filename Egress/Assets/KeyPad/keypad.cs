@@ -11,7 +11,7 @@ public class keypad : MonoBehaviour
 
     public string password;
     public Text passwordText;
-
+    public GameObject unlockObject;
 
 
     private void Start()
@@ -53,7 +53,9 @@ public class keypad : MonoBehaviour
             //script for unlocked 
           
             passwordText.color = Color.green;
-         
+            unlockObject.GetComponent<Teleporter>().canteleport = true;
+
+
         }
         else
         {

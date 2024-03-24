@@ -12,7 +12,7 @@ public class Interacttest : MonoBehaviour, IInteractable
     void Start()
     {
       
-            gameObject.GetComponent<Outline>().enabled = false;
+           
     }
 
     void Awake()
@@ -21,6 +21,7 @@ public class Interacttest : MonoBehaviour, IInteractable
         gameObject.GetComponent<Outline>().OutlineMode = Outline.Mode.OutlineVisible;
         gameObject.GetComponent<Outline>().OutlineColor = Color.yellow;
         gameObject.GetComponent<Outline>().OutlineWidth = 6f;
+        gameObject.GetComponent<Outline>().enabled = false;
     }
     public void Interact() {
         Debug.Log("Interacted " + Random.Range(0,100));
@@ -30,23 +31,8 @@ public class Interacttest : MonoBehaviour, IInteractable
             gameObject.GetComponent<StoryElement>().TriggerDialogue();
         }
       
-            if (gameObject.GetComponent<StoryElement>().dialogue.name.Contains("Key_1")) {
-                keyplacement.GetComponent<keyplacement>().KeyEntered(gameObject);
-            }
-        else if (gameObject.GetComponent<StoryElement>().dialogue.name.Contains("Key_2_placer") || gameObject.GetComponent<StoryElement>().dialogue.name.Contains("Key_3_placer"))
-        {
-
-            if (keybone.transform.childCount > 0 && keybone.transform.GetChild(0).gameObject.GetComponent<StoryElement>().dialogue.name == keyplacement.GetComponent<keyplacement>().correctKey)
-            {
-                keyplacement.GetComponent<keyplacement>().KeyEntered(keybone.transform.GetChild(0).gameObject);
-                keybone.transform.DetachChildren();
-            }
-        }
-        else if (gameObject.GetComponent<StoryElement>().dialogue.name.Contains("Key_2"))
-            {
-
-                gameObject.GetComponent<PickupKey>().Pickup();
-            }
+            
+        
       
 
     }

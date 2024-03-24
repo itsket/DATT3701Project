@@ -19,11 +19,13 @@ public class Teleporter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        
-        
-    }
 
+        GetComponent<Renderer>().material = defaultMaterial;
+
+    }
+    public void changeMat() { 
+    
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (canteleport && other.tag.Equals("Player"))
