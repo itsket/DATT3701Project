@@ -80,6 +80,8 @@ public class keyplacement : MonoBehaviour
                 
                 Debug.Log("correctKey key1");
                 currentkey.transform.position = gameObject.transform.position;
+
+
             }
 
             else

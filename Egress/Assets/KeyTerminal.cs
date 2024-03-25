@@ -22,14 +22,15 @@ public class Key2Terminal : MonoBehaviour, IInteractable
     }
     public void Interact()
     {
-            if (keybone.transform.childCount > 0 && keybone.transform.GetChild(0).gameObject.GetComponent<StoryElement>().dialogue.name.Equals(keyname))
-            {
+        if (keybone.transform.childCount > 0 && keybone.transform.GetChild(0).gameObject.GetComponent<StoryElement>().dialogue.name.Equals(keyname))
+        {
             keyGoesHere.GetComponent<keyplacement>().KeyEntered(keybone.transform.GetChild(0).gameObject);
-                keybone.transform.DetachChildren();
+            keybone.transform.DetachChildren();
 
 
-          
-            if (beam1) {
+
+            if (beam1)
+            {
                 forceField.GetComponent<ForceFieldBehaviour>().beam1Down = true;
                 forceField.GetComponent<ForceFieldBehaviour>().TurnOff();
             }
@@ -39,8 +40,11 @@ public class Key2Terminal : MonoBehaviour, IInteractable
                 forceField.GetComponent<ForceFieldBehaviour>().TurnOff();
 
             }
-
-            beam.SetActive(false);
+            if (beam != null)
+                beam.SetActive(false);
+        }
+        else { 
+            
         }
         
     }

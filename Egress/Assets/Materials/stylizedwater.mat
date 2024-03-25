@@ -132,7 +132,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _foamColour: {r: 1, g: 1, b: 1, a: 0.64705884}
-    - _shallow: {r: 0.016064432, g: 0.095105164, b: 0.1792453, a: 0.09803922}
+    - _shallow: {r: 0, g: 0, b: 0, a: 0.09803922}
   m_BuildTextureStacks: []
 --- !u!114 &3911810970798903443
 MonoBehaviour:

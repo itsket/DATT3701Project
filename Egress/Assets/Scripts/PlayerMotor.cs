@@ -13,6 +13,7 @@ public class PlayerMotor : MonoBehaviour
     public TimeManager timeManager;
     public bool inLimitless = false;
     public float playerSpeedSetter = 5f;
+    public  bool canJump = true;
 
     void Start()
     {
@@ -60,7 +61,7 @@ public class PlayerMotor : MonoBehaviour
     public void Jump()
     {
         Debug.Log("Jumped");
-        if (isGrounded)
+        if (isGrounded && canJump)
         {
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -(jumpHeight) * gravity);
         }

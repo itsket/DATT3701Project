@@ -67,7 +67,7 @@ public class TimeManager : MonoBehaviour
         
             currentTime += Time.unscaledDeltaTime;
             t = Mathf.Clamp01(currentTime / lerpDuration);
-            lerpedValue = Mathf.Lerp(endValue, startValue, t * 1f);
+            lerpedValue = Mathf.Lerp(endValue, startValue, t);
             SlowTimeSlider.value = lerpedValue;
         
             if (SlowTimeSlider.value ==1)
@@ -83,7 +83,7 @@ public class TimeManager : MonoBehaviour
             }
         }
         if (slowmo) {
-            currentTime += Time.unscaledDeltaTime*1.4f;
+            currentTime += Time.unscaledDeltaTime*1f;
              t = Mathf.Clamp01(currentTime / lerpDuration);
              lerpedValue = Mathf.Lerp(startValue, endValue, t);
             SlowTimeSlider.value = lerpedValue;
