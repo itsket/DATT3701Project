@@ -50,7 +50,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Cutoff_height: 0
+    - _Cutoff_height: -0.5
     - _Edge_Width: 0.05
     - _NoiseScale: 50
     - _Noise_Strength: 1
