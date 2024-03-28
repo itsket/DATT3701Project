@@ -45,7 +45,7 @@ public class Stars : MonoBehaviour
                 GameObject currentStar = Instantiate(intializedMesh, randomPoint, Quaternion.identity);
                 //  currentStar.transform.SetParent(transform); 
                 currentStar.transform.localScale = currentStar.transform.localScale * Random.Range(.1f, 1f);
-                currentStar.transform.SetParent(transform);
+                currentStar.transform.SetParent(transform.parent);
             }
 
             
