@@ -1,5 +1,7 @@
 
+using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 public class TimeManager : MonoBehaviour
 {
@@ -34,7 +36,7 @@ public class TimeManager : MonoBehaviour
     public Canvas slider;
     public float SlowTimeDuration = 10;
     public int uses = 3;
-
+    public Camera camera;
     private bool depleted = false;
 
     float t;
@@ -83,6 +85,7 @@ public class TimeManager : MonoBehaviour
             }
         }
         if (slowmo) {
+           
             currentTime += Time.unscaledDeltaTime*1f;
              t = Mathf.Clamp01(currentTime / lerpDuration);
              lerpedValue = Mathf.Lerp(startValue, endValue, t);
@@ -117,6 +120,7 @@ public class TimeManager : MonoBehaviour
             {
                 if (v == 0)
                 {
+                    camera.GetComponent<VisualEffects>().on = true;
                     Time.timeScale = 0.00001f;
                     Time.fixedDeltaTime = .00001f * .02f;
                     StopTimeOn = true;
@@ -133,6 +137,7 @@ public class TimeManager : MonoBehaviour
                     Debug.Log("FRom Start");
                     if (uses > 0)
                     {
+                        camera.GetComponent<VisualEffects>().on = true;
                         Time.timeScale = slowdownFactor;
                         Time.fixedDeltaTime = Time.timeScale * .02f;
 
@@ -155,7 +160,7 @@ public class TimeManager : MonoBehaviour
             {
                 if (v == 0)//time is stopped
                 {
-
+                    camera.GetComponent<VisualEffects>().on = true;
                     Time.timeScale = 0.00001f;
                     Time.fixedDeltaTime = .00001f * .02f;
                     val = reset;
@@ -174,6 +179,7 @@ public class TimeManager : MonoBehaviour
                     Debug.Log("ADDITIONAL");
                     if (uses > 0)
                     {
+                        camera.GetComponent<VisualEffects>().on = true;
                         Time.timeScale = slowdownFactor;
                         Time.fixedDeltaTime = Time.timeScale * .02f;
 
