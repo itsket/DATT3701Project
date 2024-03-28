@@ -19,9 +19,26 @@ public class SceneLoader : MonoBehaviour
     {
          AsyncOperation operation = SceneManager.LoadSceneAsync(levelIndex);
          loadingScreen.SetActive(true);
+        operation.allowSceneActivation = false;
+
+        yield return new WaitForSeconds(1f);
+
          while (!operation.isDone)
          {
-            loadingBar.value = operation.progress;
+            //loadingBar.value = operation.progress;
+            // Update loading bar value
+            loadingBar.value = Mathf.Clamp01(operation.progress / 0.9f); // Clamping to 0-1 range
+
+            // Check if loading is almost complete
+            if (operation.progress >= 0.9f)
+            {
+                // Ensure loading bar is filled
+                loadingBar.value = 1f;
+
+                // Allow scene activation
+                operation.allowSceneActivation = true;
+            }
+
             yield return null;
          }
     }
