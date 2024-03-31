@@ -35,9 +35,12 @@ public class TurretForGhostFloors : MonoBehaviour
 
      Vector3 direction = targetPoint - origin;
         GameObject currentProj = Instantiate(projectile, origin, Quaternion.identity);
+        if(currentProj.GetComponent<Waypoints1>())
         currentProj.GetComponent<Waypoints1>().enabled = true;
 
-        if(noWaypoint)
+        if(currentProj.GetComponent<Waypoints2>())
+            currentProj.GetComponent<Waypoints2>().enabled = true;
+        if (noWaypoint)
         currentProj.GetComponent<Rigidbody>().AddForce(direction.normalized*shootForce, ForceMode.Impulse);
        
      }

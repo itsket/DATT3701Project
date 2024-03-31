@@ -32,7 +32,7 @@ Material:
   - _OCCLUSIONMAP
   - _PARALLAXMAP
   m_InvalidKeywords: []
-  m_LightmapFlags: 1
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -151,7 +151,7 @@ Material:
     m_Colors:
     - _BaseColor: {r: 0.11320752, g: 0.11053753, b: 0.11053753, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 2.6082373, g: 2.467149, b: 0.082365416, a: 1}
+    - _EmissionColor: {r: 0.35675415, g: 3.1093261, b: 9.734288, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _UvOffset: {r: -0.03, g: -1.38, b: 0, a: 0}
     - _UvTiling: {r: -0.02, g: 0.04, b: 0, a: 0}

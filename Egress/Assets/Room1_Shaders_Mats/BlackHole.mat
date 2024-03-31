@@ -57,8 +57,9 @@ Material:
     - _DistortionAmount: 0.44
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RotationAmount: -1
-    - _TwirlStrength: 30
-    - _distortionScale: 15.4
-    m_Colors: []
+    - _RotationAmount: 1
+    - _TwirlStrength: 51.71
+    - _distortionScale: 16.2
+    m_Colors:
+    - _Size: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

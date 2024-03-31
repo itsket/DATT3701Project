@@ -13,7 +13,10 @@ public class Stars : MonoBehaviour
     [SerializeField] private int layer2 = 0;
     private int layerAsLayerMask1;
     private int layerAsLayerMask2;
-
+    public Material star1;
+    public Material star2;
+        public Material star3;
+    public Material star4;
     private void Awake()
     {
         layerAsLayerMask1 = (1 << layer1);
@@ -45,6 +48,21 @@ public class Stars : MonoBehaviour
                 GameObject currentStar = Instantiate(intializedMesh, randomPoint, Quaternion.identity);
                 //  currentStar.transform.SetParent(transform); 
                 currentStar.transform.localScale = currentStar.transform.localScale * Random.Range(.1f, 1f);
+              /*  if (pointsGenerated > numPoints / 1.02f)
+                {
+                    int rando = Random.Range(1, 2);
+                    switch (rando)
+                    {
+                        case 1:
+                            currentStar.GetComponent<Renderer>().material = star2;
+                            break;
+                     
+                        default:
+                            currentStar.GetComponent<Renderer>().material = star3;
+                            break;
+                    }
+                }
+              */
                 currentStar.transform.SetParent(transform.parent);
             }
 

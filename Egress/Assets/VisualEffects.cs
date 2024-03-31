@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -12,7 +13,7 @@ public class VisualEffects : MonoBehaviour
     public UnityEngine.Rendering.VolumeProfile volumeProf;
     float currentTime = 0;
     public bool on;
-
+    public bool off;
 
     private void Start()
     {
@@ -23,18 +24,26 @@ public class VisualEffects : MonoBehaviour
     }
     void Update()
     {
-       
 
-        if (on) {
+
+        if (on)
+        {
             activateEffects();
         }
+        else if (off)
+        {
+            deactivateEffects();
+        }
 
+        else { 
+        
+        }
       
     }
 
     void activateEffects() {
        
-            currentTime += Time.unscaledDeltaTime * 2f;
+            currentTime += Time.unscaledDeltaTime * 3f;
             var t = Mathf.Clamp01(currentTime / 2f);
            var lerpedValue = Mathf.Lerp(0f, 1f, t);
 
@@ -52,6 +61,19 @@ public class VisualEffects : MonoBehaviour
     }
     void deactivateEffects()
     {
+        currentTime += Time.unscaledDeltaTime * 3f;
+        var t = Mathf.Clamp01(currentTime / 2f);
+        var lerpedValue = Mathf.Lerp(1f, 0f, t);
+
+        if (currentTime >= 5f)
+        {
+            // Reset timer
+            currentTime = 0.0f;
+           
+            off = false;
+        }
+        Debug.Log("HERE: " + lerpedValue);
+        chrome.intensity.value = lerpedValue;
 
     }
 }

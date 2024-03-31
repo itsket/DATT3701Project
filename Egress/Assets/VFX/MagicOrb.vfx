@@ -24,19 +24,7 @@ MonoBehaviour:
     - model: {fileID: 8926484042661614608}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661614610}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 8926484042661614647}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614649}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614818}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614670}
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661614733}
@@ -69,43 +57,16 @@ MonoBehaviour:
     - model: {fileID: 8926484042661614613}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661614735}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614783}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614643}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 8926484042661614674}
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661614699}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661614701}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 8926484042661614677}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661614692}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614694}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614845}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 8926484042661614722}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614847}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614727}
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661614858}
@@ -134,28 +95,13 @@ MonoBehaviour:
     - model: {fileID: 8926484042661614863}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661614885}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 8926484042661614865}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614889}
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661614880}
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661614882}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614923}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614899}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614892}
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661614802}
@@ -175,9 +121,9 @@ MonoBehaviour:
   uiBounds:
     serializedVersion: 2
     x: 487
-    y: 206
-    width: 4883
-    height: 2392
+    y: 205
+    width: 4879
+    height: 2664
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9657,7 +9603,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615000}
   - {fileID: 8926484042661615008}
   - {fileID: 8926484042661614972}
-  m_UIPosition: {x: 4946, y: 1847}
+  m_UIPosition: {x: 4942, y: 2118}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:

@@ -39,6 +39,10 @@ public class Interactor : MonoBehaviour
                 if (currentObj.GetComponent<PickupKey>())
                     currentObj.GetComponent<PickupKey>().Pickup();
 
+                if (currentObj.GetComponent<disableEnable>()) {
+
+                    currentObj.GetComponent<disableEnable>().Interact();
+                }
             }
         }
     }

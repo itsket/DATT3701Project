@@ -197,6 +197,8 @@ public class TimeManager : MonoBehaviour
                 }
                 else if (v == 99)
                 {
+                    camera.GetComponent<VisualEffects>().on = false;
+                    camera.GetComponent<VisualEffects>().off = true;
                     Debug.Log("REGULAR TIME");
                     Time.timeScale = 1f;
                     Time.fixedDeltaTime = .02f;
