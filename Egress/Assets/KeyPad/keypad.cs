@@ -53,6 +53,7 @@ public class keypad : MonoBehaviour
             //script for unlocked 
           
             passwordText.color = Color.green;
+            unlockObject.GetComponent<Teleporter>().changeMat();
             unlockObject.GetComponent<Teleporter>().canteleport = true;
 
 

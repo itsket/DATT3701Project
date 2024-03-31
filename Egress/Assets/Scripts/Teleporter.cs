@@ -10,6 +10,7 @@ public class Teleporter : MonoBehaviour
     public bool canteleport = true;
     public Material brokenMaterial = null;
     public Material defaultMaterial = null;
+    public GameObject shieldonTeleporter;
     void Start()
     {
        if (!canteleport)
@@ -20,11 +21,12 @@ public class Teleporter : MonoBehaviour
     void Update()
     {
 
-        GetComponent<Renderer>().material = defaultMaterial;
+   
 
     }
-    public void changeMat() { 
-    
+    public void changeMat() {
+        GetComponent<Renderer>().material = defaultMaterial;
+        shieldonTeleporter.GetComponent<Dissolve>().activateDis = true;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -32,6 +34,7 @@ public class Teleporter : MonoBehaviour
         {
             other.gameObject.transform.position = teleportsTo.transform.position;
             GetComponent<Renderer>().material = defaultMaterial;
+
         }
         
         // other.gameObject.transform.Rotate(0, 0, 0, Space.World);

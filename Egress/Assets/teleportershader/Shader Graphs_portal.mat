@@ -23,13 +23,13 @@ Material:
   m_Name: Shader Graphs_portal
   m_Shader: {fileID: -6465566751694194690, guid: a6051043ea8c30a4dbdb8eb88b2e0b81, type: 3}
   m_Parent: {fileID: 2100000, guid: 365578126a706954a9197aaf977450e3, type: 2}
-  m_ModifiedSerializedProperties: 0
+  m_ModifiedSerializedProperties: 16
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2450
   stringTagMap: {}
   disabledShaderPasses: []
   m_LockedProperties: 
@@ -43,11 +43,17 @@ Material:
     m_Ints: []
     m_Floats:
     - _Amount: 0.002
+    - _Edge_Width: -0.06
     - _Fresnel_Intensity: 2.1
     - _Glitter_Offset: 0.63
+    - _NoiseScale: 159.06
     - _Noise_Rotation_Speed: 80
+    - _Noise_Strength: 1.32
+    - _QueueControl: 1
+    - _QueueOffset: 50
     - _Speed: 0.01
     m_Colors:
+    - _Edge_Color: {r: 0.7490195, g: 0, b: 0.007843241, a: 1}
     - _Fresnel_Color: {r: 0.4236116, g: 0.3413061, b: 2.334093, a: 1}
     - _Glitter_Color: {r: 6.9281263, g: 5.5807405, b: 220.26176, a: 1}
   m_BuildTextureStacks: []
