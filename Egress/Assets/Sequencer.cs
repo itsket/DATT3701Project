@@ -22,7 +22,7 @@ public class Sequencer : MonoBehaviour
         seqenceStart();
     }
     public void seqenceStart() {
-        if (obj1.GetComponent<ConstantSpin>().y < 2.5f)
+        if (obj1.GetComponent<ConstantSpin>().y < 3f)
         {
            
             s1 = obj1.GetComponent<ConstantSpin>().y += .08f * Time.deltaTime;
