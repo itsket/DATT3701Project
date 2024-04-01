@@ -6,7 +6,7 @@ public class Waypoints2 : MonoBehaviour {
 
     public GameObject[] waypoints;
     public GameObject turret;
-    int current = 0;
+    public int current = 0;
     public float speed;
     public bool destroyOnEnd = false;
     float WPradius = 1;

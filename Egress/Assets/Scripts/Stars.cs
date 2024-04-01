@@ -7,6 +7,7 @@ public class Stars : MonoBehaviour
 {
     
     public GameObject intializedMesh;
+
     public int numPoints = 100;
     public Material invicible;
     [SerializeField] private int layer1 = 8;
@@ -17,6 +18,10 @@ public class Stars : MonoBehaviour
     public Material star2;
         public Material star3;
     public Material star4;
+    public float maxSize = 1f;
+    public float minSize = .1f;
+    public Material material2;
+
     private void Awake()
     {
         layerAsLayerMask1 = (1 << layer1);
@@ -47,7 +52,16 @@ public class Stars : MonoBehaviour
 
                 GameObject currentStar = Instantiate(intializedMesh, randomPoint, Quaternion.identity);
                 //  currentStar.transform.SetParent(transform); 
-                currentStar.transform.localScale = currentStar.transform.localScale * Random.Range(.1f, 1f);
+                float rando = Random.Range(minSize, maxSize);
+                currentStar.transform.localScale = currentStar.transform.localScale * rando;
+
+                if (rando < maxSize / 1.08f) {
+                    currentStar.GetComponent<TrailRenderer>().startWidth = 2.5f;
+                    currentStar.GetComponent<TrailRenderer>().endWidth = 0f;
+                    currentStar.GetComponent<TrailRenderer>().time = .1f;
+                    if(material2 != null)
+                    currentStar.GetComponent<TrailRenderer>().material = material2;
+                }
               /*  if (pointsGenerated > numPoints / 1.02f)
                 {
                     int rando = Random.Range(1, 2);
@@ -64,7 +78,9 @@ public class Stars : MonoBehaviour
                 }
               */
                 currentStar.transform.SetParent(transform.parent);
+               
             }
+
 
             
         }

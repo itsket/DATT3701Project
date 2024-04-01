@@ -11,11 +11,12 @@ public class disableEnable : MonoBehaviour, IInteractable
         int i = 0;
         while (i< enableThis.Length) {
             enableThis[i].SetActive(true);
+            i++;
         }
         i = 0;
         while (i< disableThis.Length) {
             disableThis[i].SetActive(false);
-        
+            i++;
         }
        
     }
