@@ -14,6 +14,10 @@ public class Dissolve : MonoBehaviour
     public float minCutoffHeight = -0.5f;
     public bool destroyonDissolve;
 
+    private void Start()
+    {
+        dissolveMaterial.SetFloat("_Cutoff_height", 0f);
+    }
     public void Update()
     {
         if (activateDis)

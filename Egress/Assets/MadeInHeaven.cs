@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class MadeInHeaven : MonoBehaviour
 {
+    public SceneLoader sceneLoader;
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player") {
-            SceneManager.LoadScene("TheEnd");
+            sceneLoader.Sceneloader(1);
         }
       
     }

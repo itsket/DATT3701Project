@@ -1804,6 +1804,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 4331820325330907994}
   pauseMenu: {fileID: 1124963564}
+  loadingScreen: {fileID: 0}
+  loadingBar: {fileID: 0}
 --- !u!4 &355571896
 Transform:
   m_ObjectHideFlags: 0
@@ -8824,6 +8826,7 @@ MonoBehaviour:
     sentences:
     - Though you have escaped, you are now lost to this empty void of nothingness
     - at least for now
+    - THE END
   dialogueManager: {fileID: 1325253665}
   onTriggerInteract: 0
   canvas: {fileID: 22805703}
@@ -9677,11 +9680,11 @@ MonoBehaviour:
       - m_Target: {fileID: 355571895}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: Sceneloader
-        m_Mode: 5
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: StartMenu
           m_BoolArgument: 0
