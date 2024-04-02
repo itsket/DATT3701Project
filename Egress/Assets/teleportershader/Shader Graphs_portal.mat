@@ -42,7 +42,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Amount: 0.002
+    - _Amount: 0.001
     - _Edge_Width: -0.06
     - _Fresnel_Intensity: 2.1
     - _Glitter_Offset: 0.63

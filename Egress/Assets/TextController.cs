@@ -16,6 +16,7 @@ public class TextController : MonoBehaviour
     void Start()
     {
         sentences = new Queue<string>();
+        textScreen.GetComponent<Canvas>().enabled = false;
     }
     public void StartDialogue(Dialogue dialogue) {
         Cursor.lockState = CursorLockMode.None;

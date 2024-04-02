@@ -24,7 +24,7 @@ public GameObject floor;
         {
             currentFloor = Instantiate(floor, origin, Quaternion.identity);
             currentFloor.transform.localScale += scaleChange;
-           
+            currentFloor.transform.localRotation = new Quaternion(0f, 0f, 0.707106829f, 0.707106829f);
             Destroy(currentFloor, disappearSpeed);
         }
        

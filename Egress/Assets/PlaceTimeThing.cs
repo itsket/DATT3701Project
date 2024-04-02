@@ -6,6 +6,8 @@ public class PlaceTimeThing : MonoBehaviour, IInteractable
 {
     public GameObject obj1;
     public Sequencer sequencer;
+    public GameObject player;
+
     private void Awake()
     {
         gameObject.AddComponent<Outline>();
@@ -18,6 +20,7 @@ public class PlaceTimeThing : MonoBehaviour, IInteractable
     {
         obj1.SetActive(true);
         sequencer.sequence1 = true;
+      player.GetComponent<CharacterController>().enabled = false;
     }
 
     void HitByRay()
