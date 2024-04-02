@@ -31,7 +31,7 @@ public class Waypoints2 : MonoBehaviour {
             }
             if (current == 1)
             {
-                speed = 100f;
+                speed = 75f;
             }
            else if (current == 4)
             {
